@@ -81,8 +81,9 @@
         display: inline-block;
     }
 
-    td,
-    th {
+    td {
+        border-radius:
+            9px, 9px, 0px, 0px;
         max-width: 200px;
     }
 
