@@ -80,6 +80,11 @@
         display: inline-block;
     }
 
+    td,
+    th {
+        max-width: 200px;
+    }
+
     .btn-tambah-produk:hover {
         background-color: darkorange;
     }
@@ -101,11 +106,17 @@
         margin-bottom: 16px;
     }
 
-    .trash i {
-        padding: 6px;
+    .trash a {
+        padding: 4px;
         border-radius: 4px;
         color: white;
         background-color: red;
+    }
+
+    .tombol {
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 </style>
 
@@ -150,17 +161,19 @@
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock_quantity }}</td>
                 <td>
-                    <div class="pencil">
-                        <a href="#"><i class="fas fa-pencil-alt"></i></a>
-                    </div>
-                    <div class="trash">
-                        <form action="{{ url('/products/' . $product->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <a type="submit" onclick="return confirm('Are you sure you want to delete this product?')" style="background:none;border:none;color:red;">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-                        </form>
+                    <div class="tombol">
+                        <div class="pencil">
+                            <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        </div>
+                        <div class="trash">
+                            <form action="{{ url('/products/' . $product->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <a type="submit" onclick="return confirm('Are you sure you want to delete this product?')">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+                            </form>
+                        </div>
                 </td>
             </tbody>
             @endforeach
