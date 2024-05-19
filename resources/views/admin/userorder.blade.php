@@ -87,7 +87,7 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Tabel Konten</h2>
+            <h2>User Orders</h2>
         </div>
         <table>
             <thead>

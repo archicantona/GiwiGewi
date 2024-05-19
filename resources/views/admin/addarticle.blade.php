@@ -114,8 +114,8 @@
         <div>
             <img src="{{ asset('img/logo.png') }}" alt="Giwigewi Logo">
             <a href="/admin"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="/userorder" class="active"><i class="fas fa-chart-line"></i> User Order</a>
-            <a href="/tambahartikel"><i class="fas fa-plus"></i> Tambah Artikel</a>
+            <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
+            <a href="/tambahartikel" class="active"><i class="fas fa-plus"></i> Tambah Artikel</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -123,7 +123,7 @@
     </div>
 
     <div class="content">
-        <h2>Tabel Konten</h2>
+        <h2>Tambah Artikel</h2>
         <label for="title">Judul Artikel</label>
         <input type="text" id="title" name="title">
         <label for="description">Deskripsi Artikel</label>
