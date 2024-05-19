@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
@@ -85,6 +86,8 @@
         max-width: 200px;
     }
 
+
+
     .btn-tambah-produk:hover {
         background-color: darkorange;
     }
@@ -94,16 +97,41 @@
         margin-bottom: 16px;
     }
 
-    .pencil a {
+    .pencil .edit-button {
         padding: 4px;
         border-radius: 4px;
         color: white;
         background-color: green;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .pencil .edit-button:hover {
+        background-color: darkred;
+        color: white;
     }
 
     .trash {
         text-align: center;
         margin-bottom: 16px;
+    }
+
+    .trash .delete-button {
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        background-color: red;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .trash .delete-button:hover {
+        background-color: darkred;
+        color: white;
     }
 
     .trash a {
@@ -115,6 +143,7 @@
 
     .tombol {
         display: flex;
+        text-align: center;
         align-items: center;
         gap: 6px;
     }
@@ -156,22 +185,22 @@
                 <td>
 
                 </td>
-                <td>{{ $product->name }}</td>
-                <td>{{ $product->description }}</td>
+                <td style="max-width: 100px;">{{ $product->name }}</td>
+                <td style="text-align: justify;">{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->stock_quantity }}</td>
                 <td>
                     <div class="tombol">
                         <div class="pencil">
-                            <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                            <button href="#" class="edit-button"><i class="fas fa-pencil-alt"></i></button>
                         </div>
                         <div class="trash">
                             <form action="{{ url('/products/' . $product->id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <a type="submit" onclick="return confirm('Are you sure you want to delete this product?')">
+                                <button type="submit" onclick="return confirm('Are you sure you want to delete this product?')" class="delete-button">
                                     <i class="fas fa-trash-alt"></i>
-                                </a>
+                                </button>
                             </form>
                         </div>
                 </td>
