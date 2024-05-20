@@ -31,9 +31,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [ProductController::class, 'index'])->name('admin.dashboard')->middleware(('userAccess:admin'));
     Route::get('/userorder', [OrderController::class, 'index'])->middleware(('userAccess:admin'));
     Route::get('/pelanggan', [AdminController::class, 'pelanggan'])->middleware(('userAccess:pelanggan,admin'));
-    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('products.create')->middleware(('userAccess:admin'));
-    Route::post('/admin/products', [ProductController::class, 'store'])->name('products.store')->middleware(('userAccess:admin'));
 });
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
 Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 

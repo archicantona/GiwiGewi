@@ -46,23 +46,24 @@ class ProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric',
             'stock_quantity' => 'required|integer',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'picture' => 'nullable|image|max:2048', // Validasi gambar
         ]);
 
-        $imageContent = null;
-        if ($request->hasFile('product_image')) {
-            $image = $request->file('product_image');
-            $imageContent = file_get_contents($image->getRealPath());
+        // Simpan gambar jika ada
+        $picture = null;
+        if ($request->hasFile('picture')) {
+            $picture = file_get_contents($request->file('picture')->getRealPath());
         }
 
-        Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock_quantity' => $request->stock_quantity,
-            'picture' => $imageContent,
-        ]);
+        // Simpan data
+        $product = new Product;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->stock_quantity = $request->stock_quantity;
+        $product->picture = $picture;
+        $product->save();
 
-        return redirect('/admin/products')->with('success', 'Product added successfully.');
+        return redirect()->route('products.index')->with('success', 'Product berhasil ditambahkan');
     }
 }

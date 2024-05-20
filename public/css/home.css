@@ -1,13 +1,183 @@
-.video-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%; /* Ubah sesuai kebutuhan */
-    max-width: 560px; /* Atur lebar maksimum sesuai kebutuhan */
+.content1 {
+    background-color: #ffc481;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.youtube-video {
+.kiri {
+    font-family: sans-serif;
+    max-width: 360px;
+    padding-top: 20px;
+    padding: 20px;
+    font-size: 24px;
+    text-align: left;
+}
+
+.shop-now {
+    margin-top: 30px;
+    background-color: #00c6ae;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 54px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.shop-now:hover {
+    background-color: #009a8b;
+}
+
+.content2 {
+    display: flex;
+    background-color: #029a66;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: left;
+}
+
+.section {
+    background-color: #029a66;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.section img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.section p .brand {
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.banner {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner .left {
+    max-width: 50%;
+}
+
+.banner .right img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.banner .shop-now {
+    background-color: #00c6ae;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.banner .shop-now:hover {
+    background-color: #009a8b;
+}
+
+.video-container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;/
+}
+
+.youtube-video{
     width: 100%;
-    height: 100%;
+    height: 600px;
+}
+
+.content3{
+    display: flex;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.pilihan_produk{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 8px;
+    color: black;
+    font-size: 20px;
+    border: 1px solid black;
+    border-spacing: 10px;
+    font-weight: 100;
+}
+
+.content4 {
+    display: flex;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.item {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    width: 260px;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 170px;  */
+    padding: 20px;
+    border: 1px solid rgba(200, 200, 200, 1);
+}
+
+.keranjang-btn {
+    background-color: #FB931E;
+    border-radius: 5px;
+    border: solid #FB931E;
+    padding: 3px 40px 3px 40px;
 }
