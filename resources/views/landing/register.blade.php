@@ -104,7 +104,7 @@
                     </div>
                 </form>
                 <div class="formtag">
-                    <p class="text-center mt-3 start-col-2">Sudah punya akun? <a href="/">Login</a></p>
+                    <p class="text-center mt-3 start-col-2">Sudah punya akun??? <a href="/">Login</a></p>
                 </div>
             </div>
         </div>
