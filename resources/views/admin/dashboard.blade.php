@@ -184,7 +184,7 @@
             <tbody>
                 <td>{{ $product->id }}</td>
                 <td>
-
+                    <img src="{{$product-> picture}}" width="100">
                 </td>
                 <td style="max-width: 100px;">{{ $product->name }}</td>
                 <td style="text-align: justify;">{{ $product->description }}</td>

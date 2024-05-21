@@ -161,10 +161,10 @@
                         <label for="product_name">Nama Produk</label>
                         <input type="text" id="product_name" name="product_name" required>
                     </div>
-                    <!-- <div style="flex: 1;">
+                    <div style="flex: 1;">
                         <label for="product_image">Gambar Produk</label>
                         <input type="file" id="product_image" name="product_image" required>
-                    </div> -->
+                    </div>
                 </div>
                 <div class="form-group">
                     <div style="flex: 1;">
