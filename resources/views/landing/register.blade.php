@@ -92,6 +92,10 @@
                         <input id="email" type="email" value="{{old('email')}}" class="form-control" name="email" required autofocus>
                     </div>
                     <div class="form-group formtag">
+                        <label for="username">Username</label>
+                        <input id="username" type="username" value="{{old('username')}}" class="form-control" name="username" required>
+                    </div>
+                    <div class="form-group formtag">
                         <label for="password">Password</label>
                         <input id="password" type="password" class="form-control" name="password" required>
                     </div>
