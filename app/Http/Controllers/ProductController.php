@@ -41,29 +41,13 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'stock_quantity' => 'required|integer',
-            'picture' => 'nullable|image|max:2048', // Validasi gambar
-        ]);
-
-        // Simpan gambar jika ada
-        $picture = null;
+        $data = Product::create($request->all());
         if ($request->hasFile('picture')) {
-            $picture = file_get_contents($request->file('picture')->getRealPath());
+            $request->file('picture')->move('img/upload/', $request->file('picture')->getClientOriginalName());
+            $data->picture = $request->file('picture')->getClientOriginalName();
+            $data->save();
         }
-
-        // Simpan data
-        $product = new Product;
-        $product->name = $request->name;
-        $product->description = $request->description;
-        $product->price = $request->price;
-        $product->stock_quantity = $request->stock_quantity;
-        $product->picture = $picture;
-        $product->save();
-
-        return redirect()->route('products.index')->with('success', 'Product berhasil ditambahkan');
+        session()->flash('success', 'Data berhasil diinput');
+        return redirect()->route('admin.dashboard');
     }
 }

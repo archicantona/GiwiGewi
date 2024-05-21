@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->timestamp('order_date')->useCurrent();
             $table->string('status');
+            $table->timestamps();
         });
     }
 

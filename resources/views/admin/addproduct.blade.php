@@ -155,30 +155,32 @@
             <h2>Informasi Produk</h2>
         </div>
         <div class="form-container">
+
             <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <div style="flex: 1;">
-                        <label for="product_name">Nama Produk</label>
-                        <input type="text" id="product_name" name="product_name" required>
+                        <label for="name">Nama Produk</label>
+                        <input type="text" id="product_name" name="name" required>
                     </div>
                     <div style="flex: 1;">
-                        <label for="product_image">Gambar Produk</label>
-                        <input type="file" id="product_image" name="product_image" required>
+                        <label for="picture">Gambar Produk</label>
+                        <input type="file" id="picture" name="picture" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <div style="flex: 1;">
-                        <label for="product_price">Harga Produk</label>
-                        <input type="number" id="product_price" name="product_price" required>
+                        <label for="price">Harga Produk</label>
+                        <input type="number" id="price" name="price" required>
                     </div>
                     <div style="flex: 1;">
-                        <label for="product_stock">Stok</label>
-                        <input type="number" id="product_stock" name="product_stock" required>
+                        <label for="stock_quantity">Stok</label>
+                        <input type="number" id="stock_quantity" name="stock_quantity" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="product_description">Deskripsi Produk</label>
-                    <textarea id="product_description" name="product_description" required></textarea>
+                    <label for="description">Deskripsi Produk</label>
+                    <textarea id="description" name="description" required></textarea>
                 </div>
 
                 <div class="form-actions">
