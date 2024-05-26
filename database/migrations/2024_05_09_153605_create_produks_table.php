@@ -20,6 +20,10 @@ return new class extends Migration
             $table->text('description');
             $table->decimal('price', 8, 2);
             $table->integer('stock_quantity');
+            $table->string('storage_period');
+            $table->string('no_BPOM');
+            $table->string('category');
+            $table->integer('weight');
             $table->timestamps();
         });
     }

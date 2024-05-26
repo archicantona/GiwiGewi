@@ -124,17 +124,20 @@
     </div>
 
     <div class="content">
-        <h2>Tambah Artikel</h2>
-        <label for="title">Judul Artikel</label>
-        <input type="text" id="title" name="title">
-        <label for="description">Deskripsi Artikel</label>
-        <textarea id="description" name="description" rows="4"></textarea>
-        <label for="image">Gambar Artikel</label>
-        <input type="file" id="image" name="image">
-        <div class="buttons">
-            <button class="discard">Discard</button>
-            <button class="save">Save</button>
-        </div>
+        <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <h2>Tambah Artikel</h2>
+            <label for="title">Judul Artikel</label>
+            <input type="text" id="title" name="title">
+            <label for="content">Konten Artikel</label>
+            <textarea id="content" name="content" rows="4"></textarea>
+            <label for="image">Gambar Artikel</label>
+            <input type="file" id="image" name="image">
+            <div class="buttons">
+                <button class="discard">Discard</button>
+                <button class="save">Save</button>
+            </div>
+        </form>
     </div>
 </body>
 

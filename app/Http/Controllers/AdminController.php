@@ -10,8 +10,4 @@ class AdminController extends Controller
     {
         return view('admin/dashboard');
     }
-    function pelanggan()
-    {
-        return view('user/produk');
-    }
 }

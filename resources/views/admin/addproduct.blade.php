@@ -182,6 +182,26 @@
                     <label for="description">Deskripsi Produk</label>
                     <textarea id="description" name="description" required></textarea>
                 </div>
+                <div class="form-group">
+                    <div style="flex: 1;">
+                        <label for="storage_period">Durasi Penyimpanan</label>
+                        <input type="number" id="storage_period" name="storage_period" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="no_BPOM">Nomor BPOM</label>
+                        <input type="text" id="no_BPOM" name="no_BPOM" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="flex: 1;">
+                        <label for="category">Category</label>
+                        <input type="text" id="category" name="category" required>
+                    </div>
+                    <div style="flex: 1;">
+                        <label for="weight">Berat (Gram)</label>
+                        <input type="number" id="weight" name="weight" required>
+                    </div>
+                </div>
 
                 <div class="form-actions">
                     <button type="button" class="btn-discard">Discard</button>
