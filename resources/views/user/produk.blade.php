@@ -62,7 +62,8 @@
                         <h2 style="font-size: 20px;">{{ $product->name }}</h2>
                         <p class="price">{{ $product->price }}</p>
                         <div class="">
-                            <a href="{{ url('/product/' . $product->id) }}" class="keranjang-btn">Keranjang</a>
+                            <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
+                            <a href="{{ url('/product/' . $product->id) }}" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></a>
                         </div>
                     </div>
                     @endforeach

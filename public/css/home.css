@@ -175,12 +175,6 @@
     border: 1px solid rgba(200, 200, 200, 1);
 }
 
-.keranjang-btn {
-    background-color: #FB931E;
-    border-radius: 5px;
-    border: solid #FB931E;
-    padding: 3px 40px 3px 40px;
-}
 
 .product-container {
     display: flex;
@@ -288,4 +282,20 @@ h2 {
 
 .keranjang-btn:hover {
     background-color: #ffa94d;
+}
+
+.detail-btn {
+    display: inline-block;
+    background-color: #00c6ae; /* Warna latar belakang tombol */
+    color: white; /* Warna teks */
+    padding: 10px 20px; /* Ruang di dalam tombol */
+    text-align: center; /* Pusatkan teks */
+    text-decoration: none; /* Menghilangkan underline */
+    border-radius: 10px; /* Sudut melengkung */
+    font-size: 16px; /* Ukuran teks */
+}
+
+/* Tambahan untuk hover efek */
+.detail-btn:hover {
+    background-color: #015f54; /* Warna latar belakang saat hover */
 }

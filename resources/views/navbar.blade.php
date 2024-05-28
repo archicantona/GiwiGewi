@@ -41,6 +41,9 @@
                 </button>
                 @endif
             </div>
+            <div><button class="btn" style="background-color: #FB931E;" type="button">
+                    <i class="fas fa-shopping-cart" style="color: white;"></i>
+                </button></div>
 
         </div>
 </nav>

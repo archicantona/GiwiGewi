@@ -28,8 +28,9 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/register', [RegisterController::class, 'store']);
 });
 Route::get('/', function () {
-    return view('user/home');
-});
+    return view('user.home'); // Ganti dengan halaman utama Anda
+})->name('home');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [SesiController::class, 'logout']);
