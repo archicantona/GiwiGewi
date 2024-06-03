@@ -30,4 +30,10 @@ class ArticleController extends Controller
         $articles = Article::all();
         return view('user.article', compact('articles'));
     }
+
+    public function isiartikel($id)
+    {
+        $articles = Article::findOrFail($id);
+        return view('user.isiarticle', compact('articles'));
+    }
 }

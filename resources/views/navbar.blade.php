@@ -15,21 +15,21 @@
                     <a class="nav-link" href="/artikel">Artikel</a>
                 </li>
             </ul>
-            <a href="/">
-                <img src="{{ asset('img/logo.png') }}" alt="Profil" width="100" class="mx-auto">
+            <a class="navbar-brand mx-auto" href="/">
+                <img src="{{ asset('img/logo.png') }}" alt="Profil" width="100">
             </a>
             <form class="d-flex ms-auto" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn" style="color:white" type="submit">Search</button>
+                <button class="btn text-white" type="submit" style="background-color: #FB931E;">Search</button>
             </form>
-            <div>
+            <div class="d-flex align-items-center ms-3">
                 @if(auth()->check())
                 <!-- Jika pengguna sudah login -->
                 <div class="dropdown">
                     <button class="btn dropdown-toggle" style="background-color: #FB931E;" type="button" data-bs-toggle="dropdown">
                         <i class="fas fa-user" style="color: white;"></i>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Informasi Akun</a></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
@@ -40,10 +40,11 @@
                     <i class="fas fa-user" style="color: white;"></i>
                 </button>
                 @endif
-            </div>
-            <div><button class="btn" style="background-color: #FB931E;" type="button">
+                <button class="btn ms-2" style="background-color: #FB931E;" type="button" onclick="toggleCartPopup()">
                     <i class="fas fa-shopping-cart" style="color: white;"></i>
-                </button></div>
+                </button>
 
+            </div>
         </div>
+    </div>
 </nav>

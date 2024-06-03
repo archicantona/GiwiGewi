@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('picture');
             $table->text('description');
-            $table->decimal('price', 8, 2);
+            $table->integer('price');
             $table->integer('stock_quantity');
             $table->string('storage_period');
             $table->string('no_BPOM');

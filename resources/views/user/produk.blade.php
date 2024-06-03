@@ -23,6 +23,30 @@
             display: flex;
             align-items: center;
         }
+
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .cart-popup-content {
+            padding: 20px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -30,63 +54,39 @@
 
     @include('navbar')
 
-    <!-- <div class="gambar-produk">
-        <img src="{{ asset('img/produk/id-11134207-7r990-lq607i89d4pq29.jpg') }}" alt="Profil" width="180" class="mx-auto">
-        <p>Sirup Kalamansi 500ML</p>
-        <p>50.000</p>
-    </div>
-    <div class="counter">
-        <button class="minus-btn">-</button>
-        <input type="text" class="qty-input" value="1">
-        <button class="plus-btn">+</button>
-    </div> -->
-    <div class="main-container">
-        <div class="menu-container">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" style="background-color: #FB931E;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pilihan Produk
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="item-container">
-            <div class="section">
-                <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 40px">
-                    @foreach ($products as $product)
-                    <div class="item">
-                        <img src="img/upload/{{$product-> picture}}" alt="Profil" width="180">
-                        <h2 style="font-size: 20px;">{{ $product->name }}</h2>
-                        <p class="price">{{ $product->price }}</p>
-                        <div class="">
-                            <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
-                            <a href="{{ url('/product/' . $product->id) }}" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></a>
-                        </div>
+    <div class="item-container">
+        <div class="section">
+            <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 40px">
+                @foreach ($products as $product)
+                <div class="item">
+                    <img src="img/upload/{{$product-> picture}}" alt="Profil" height="180">
+                    <h2 style="font-size: 20px;">{{ $product->name }}</h2>
+                    <p class="price">{{ $product->price }}</p>
+                    <div class="">
+                        <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
+                        <button class="keranjang-btn" onclick="addToCart('{{ $product->name }}', '{{ $product->price }}')"><i class="fas fa-cart-plus" style="color: white;"></i></button>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <!-- <footer>
-        <div class="container">
-            <div class="footer-content">
-                <img src="{{ asset('img/logo.png') }}" alt="Profil" width="160">
-                <p>&copy; 2024 Contoh Website. Hak Cipta Dilindungi.</p>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Kontak</a></li>
-                </ul>
-            </div>
+    </div>
+
+    <!-- Keranjang Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="cart-popup-content">
+            <span class="close" onclick="toggleCartPopup()">&times;</span>
+            <h2>Keranjang Belanja</h2>
+            <div id="cart-items"></div>
+            <h3>Total: <span id="cart-total">0</span></h3>
         </div>
-    </footer> -->
+    </div>
+
+   
     @include('footer')
 
-
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
