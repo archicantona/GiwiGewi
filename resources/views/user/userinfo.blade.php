@@ -104,10 +104,12 @@
             margin: 0;
         }
 
-        .transaction-item .details {
+        .transaction-item .user-details {
+
             display: flex;
             flex-direction: column;
         }
+
 
         .transaction-item .price {
             color: #333;
@@ -146,15 +148,17 @@
             <h2>Informasi Akun</h2>
             <div class="transaction-item">
 
-                <div class="details">
-                    <li><strong>Nama:</strong> {{ $user->name }}</li>
-                    <li><strong>Email:</strong> {{ $user->email }}</li>
-                    <li><strong>Password:</strong> ****** </li>
-                    <a>ganti password</a>
+                <div class="userdetails" style="font-size: 20px;">
+                    <li><strong>Nama:</strong> </li>
+                    <p>{{ $user->name }}</p>
+                    <li><strong>Email:</strong></li>
+                    <p>{{ $user->email }}</p>
+                    <li><strong>Password:</strong></li>
+                    <p>*******</p>
+
                 </div>
 
-                <div class="price">
-
+              
 
                 </div>
             </div>

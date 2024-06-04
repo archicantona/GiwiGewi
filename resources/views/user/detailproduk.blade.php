@@ -82,12 +82,7 @@
             <p style="margin-bottom: 1px;"><strong>Nomor BPOM:</strong> {{ $product->no_BPOM }} ML</p>
             <h3>Deskripsi Produk</h3>
             <div class="deskripsi">{{ $product->description }}</div>
-            <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
-                @csrf
-                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></button>
-            </form>
+
         </div>
     </div>
 
@@ -96,7 +91,7 @@
 
     <!-- Simple Dropdown Example -->
 
-</body> 
+</body>
 
 
 </html>

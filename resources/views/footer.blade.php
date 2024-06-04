@@ -17,7 +17,7 @@
     </div>
     <div class="footer-section">
         <h2>SUPPORT</h2>
-        <p>Contact Us</p>
+        <li><a href="/contact">Contact Us</a></li>
         <!-- Sisipkan ikon media sosial di sini -->
     </div>
     <div class="footer-bottom">

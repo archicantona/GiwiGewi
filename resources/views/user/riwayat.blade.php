@@ -139,7 +139,7 @@
     <div class="main-container">
         <div class="button-container">
             <a href="/userinfo" class="button second-button">User Info</a>
-            <a href="/riwayattransaksi" class="button first-button" style="color: black;">Riwayat Pesanan</a>
+            <a href="/riwayattransaksi" class="button first-button" style="color: white;">Riwayat Pesanan</a>
         </div>
         <div class="transaction-container">
 
@@ -157,10 +157,6 @@
                 <a href="{{ url('/product/' . $order->product->id) }}" class="btn">Beli Lagi</a>
             </div>
             @endforeach
-            <div class="price">
-
-
-            </div>
         </div>
     </div>
     </div>
