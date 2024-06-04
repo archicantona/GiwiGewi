@@ -299,3 +299,113 @@ h2 {
 .detail-btn:hover {
     background-color: #015f54; /* Warna latar belakang saat hover */
 }
+
+
+        /* Style untuk popup keranjang */
+        .cart-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .cart-popup-content {
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .cart-popup-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cart-popup-content .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .cart-item img {
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .cart-item h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart-item p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .cart-item .remove-item,
+        .cart-item .edit-item {
+            font-size: 14px;
+            color: #007bff;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .cart-item .remove-item:hover,
+        .cart-item .edit-item:hover {
+            text-decoration: underline;
+        }
+
+        #cartTotal {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #checkoutBtn {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background-color: #fb931e;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #checkoutBtn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Tambahan styling untuk tombol View Cart di navbar */
+        #cartBtn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #cartBtn:hover {
+            background-color: #0056b3;
+        }

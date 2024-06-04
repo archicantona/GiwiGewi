@@ -15,3 +15,22 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
+  $(document).on('click', '.remove-item', function(e) {
+    e.preventDefault();
+    var cartId = $(this).data('id');
+
+    $.ajax({
+        url: '{{ route("cart.remove") }}',
+        method: 'POST',
+        data: {
+            _token: '{{ csrf_token() }}',
+            cart_id: cartId
+        },
+        success: function(response) {
+            if (response.success) {
+                // Refresh the cart popup
+                $('#cartBtn').click();
+            }
+        }
+    });
+});

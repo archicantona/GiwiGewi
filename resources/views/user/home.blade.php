@@ -78,35 +78,25 @@
     </div>
 
     <div class="content4">
+        @foreach ($randomProducts as $product)
         <div class="item">
-            <img src="{{ asset('img/produk/2.png') }}" alt="Profil" width="180">
-            <h2 style="font-size: 20px;">Pisang Rawas</h2>
-            <p class="price">18.000</p>
+            <img src="img/upload/{{$product->picture}}" alt="Profil" width="180">
+            <h2 style="font-size: 20px;">{{ $product->name }}</h2>
+            <p class="price">{{ $product->price }}</p>
             <div class="">
                 <button class="keranjang-btn">Keranjang</button>
             </div>
         </div>
-
-        <div class="item">
-            <img src="{{ asset('img/produk/2.png') }}" alt="Profil" width="180">
-            <h2 style="font-size: 20px;">Pisang Rawas</h2>
-            <p class="price">18.000</p>
-            <div class="">
-                <button class="keranjang-btn">Keranjang</button>
-            </div>
-        </div>
-
-        <div class="item">
-            <img src="{{ asset('img/produk/2.png') }}" alt="Profil" width="180">
-            <h2 style="font-size: 20px;">Pisang Rawas</h2>
-            <p class="price">18.000</p>
-            <div class="">
-                <button class="keranjang-btn">Keranjang</button>
-            </div>
-        </div>
+        @endforeach
     </div>
+
     @include('footer')
 
+
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
 
 </html>

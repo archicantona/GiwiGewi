@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\InfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +28,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
     Route::post('/register', [RegisterController::class, 'store']);
 });
-Route::get('/', function () {
-    return view('user.home'); // Ganti dengan halaman utama Anda
-})->name('home');
 
+Route::get('/', [HalamanController::class, 'getRandomProducts'])->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [SesiController::class, 'logout']);
@@ -41,6 +40,13 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->middleware(('userAccess:admin'));
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store')->middleware(('userAccess:admin'));
     Route::get('/articles', [ArticleController::class, 'addarticle'])->name('articles.addarticles');
+    Route::post('/cart/add', [HalamanController::class, 'addToCart'])->name('cart.add');
+    Route::get('/cart', [HalamanController::class, 'getCart'])->name('cart.get');
+    Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
+    Route::post('/checkout', [HalamanController::class, 'checkout'])->name('checkout');
+    Route::get('/userinfo', [InfoController::class, 'userinfo'])->name('userinfo');
+    Route::get('/riwayattransaksi', [InfoController::class, 'transactionHistory'])->name('transaction.history');
+    Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
 });
 
 
@@ -58,9 +64,6 @@ Route::get('/contact', function () {
     return view('user/contact');
 });
 
-Route::get('/tes', function () {
-    return view('user/tes');
-});
 
 Route::get('/tambahartikel', function () {
     return view('admin/addarticle');

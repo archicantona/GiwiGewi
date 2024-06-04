@@ -71,6 +71,22 @@
         align-items: center;
         margin-bottom: 20px;
     }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
 </style>
 
 <body>
@@ -93,26 +109,34 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>User ID</th>
-                    <th>Product ID</th>
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Nama Produk</th>
                     <th>Quantity</th>
-                    <th>Order Date</th>
-                    <th>Status</th>
+                    <th>Harga</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($orders as $order)
+                @foreach($orders as $userId => $userOrders)
+                @php
+                $rowspan = $userOrders->count();
+                $first = true;
+                @endphp
+                @foreach($userOrders as $index => $order)
                 <tr>
-                    <td>{{ $order->id }}</td>
-                    <td>{{ $order->user_id }}</td>
-                    <td>{{ $order->product_id }}</td>
+                    @if($first)
+                    <td rowspan="{{ $rowspan }}">{{ $loop->parent->iteration }}</td>
+                    <td rowspan="{{ $rowspan }}">{{ $order->user->name }}</td>
+                    @php $first = false; @endphp
+                    @endif
+                    <td>{{ $order->product->name }}</td>
                     <td>{{ $order->quantity }}</td>
-                    <td>{{ $order->order_date->format('Y-m-d H:i:s') }}</td>
-                    <td>{{ $order->status }}</td>
+                    <td>Rp. {{ number_format($order->product->price * $order->quantity, 0, ',', '.') }}</td>
                 </tr>
                 @endforeach
+                @endforeach
             </tbody>
+
         </table>
     </div>
 </body>

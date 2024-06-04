@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-QHpuNzP5tkJ/NlTrEZKN5xubtkopxHJJu6CNKxtEVcGUg5/cDDzVYydWct8lIUkc2Y9EfmUHHdTVZiBe0kxO0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
+        
         .navbar-nav .nav-link {
             color: white;
             font-family: 'Open Sans', sans-serif;
@@ -29,11 +30,12 @@
             position: fixed;
             top: 0;
             right: 0;
-            width: 300px;
+            width: 400px;
             height: 100%;
             background-color: white;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
             overflow-y: auto;
+            z-index: 1000;
         }
 
         .cart-popup-content {
@@ -47,6 +49,7 @@
             font-size: 25px;
             cursor: pointer;
         }
+
     </style>
 </head>
 
@@ -59,35 +62,32 @@
             <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 40px">
                 @foreach ($products as $product)
                 <div class="item">
-                    <img src="img/upload/{{$product-> picture}}" alt="Profil" height="180">
+                    <img src="img/upload/{{$product->picture}}" alt="Profil" height="180">
                     <h2 style="font-size: 20px;">{{ $product->name }}</h2>
                     <p class="price">{{ $product->price }}</p>
                     <div class="">
                         <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
-                        <button class="keranjang-btn" onclick="addToCart('{{ $product->name }}', '{{ $product->price }}')"><i class="fas fa-cart-plus" style="color: white;"></i></button>
+                        <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></button>
+                        </form>
                     </div>
                 </div>
                 @endforeach
             </div>
+
         </div>
     </div>
     </div>
 
-    <!-- Keranjang Popup -->
-    <div id="cart-popup" class="cart-popup">
-        <div class="cart-popup-content">
-            <span class="close" onclick="toggleCartPopup()">&times;</span>
-            <h2>Keranjang Belanja</h2>
-            <div id="cart-items"></div>
-            <h3>Total: <span id="cart-total">0</span></h3>
-        </div>
-    </div>
+    
 
-   
+
     @include('footer')
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

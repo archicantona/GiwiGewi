@@ -30,19 +30,36 @@
                         <i class="fas fa-user" style="color: white;"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Informasi Akun</a></li>
+                        <li><a class="dropdown-item" href="/userinfo">Informasi Akun</a></li>
                         <li><a class="dropdown-item" href="/logout">Logout</a></li>
                     </ul>
+                </div>
+                <button id="cartBtn" class="btn ms-2" style="background-color: #FB931E;" type="button">
+                    <i class="fas fa-shopping-cart" style="color: white;"></i>
+                </button>
+                <div id="cartPopup" class="cart-popup">
+                    <div class="cart-popup-content">
+                        <span class="close">&times;</span>
+                        <h2>Keranjang Produk</h2>
+                        <div id="cartItems">
+                            <!-- Cart items will be loaded here -->
+                        </div>
+                        <div id="cartTotal">
+                            <!-- Cart total will be shown here -->
+                        </div>
+                        <form action="{{ route('checkout') }}" method="POST">
+                            @csrf
+                            <button type="submit" id="checkoutBtn" class="btn btn-warning">Checkout</button>
+                        </form>
+                    </div>
                 </div>
                 @else
                 <!-- Jika pengguna belum login -->
                 <button class="btn" style="background-color: #FB931E;" type="button" onclick="window.location.href='/login'">
-                    <i class="fas fa-user" style="color: white;"></i>
+                    <i class="fas fa-user" style="color: white;"> Login</i>
                 </button>
                 @endif
-                <button class="btn ms-2" style="background-color: #FB931E;" type="button" onclick="toggleCartPopup()">
-                    <i class="fas fa-shopping-cart" style="color: white;"></i>
-                </button>
+
 
             </div>
         </div>

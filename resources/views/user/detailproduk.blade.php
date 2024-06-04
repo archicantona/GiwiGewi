@@ -82,34 +82,21 @@
             <p style="margin-bottom: 1px;"><strong>Nomor BPOM:</strong> {{ $product->no_BPOM }} ML</p>
             <h3>Deskripsi Produk</h3>
             <div class="deskripsi">{{ $product->description }}</div>
-            <div class="quantity-control">
-                <button class="minus-btn" onclick="updateQuantity(-1)">-</button>
-                <input type="text" id="quantity" value="1">
-                <button class="plus-btn" onclick="updateQuantity(1)">+</button>
-            </div>
-            <button class="add-to-cart-btn">MASUKKAN KERANJANG</button>
+            <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></button>
+            </form>
         </div>
     </div>
 
     @include('footer')
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
-
-    <script>
-        function updateQuantity(amount) {
-            var quantityInput = document.getElementById('quantity');
-            var currentQuantity = parseInt(quantityInput.value);
-            var newQuantity = currentQuantity + amount;
-            if (newQuantity > 0) {
-                quantityInput.value = newQuantity;
-            }
-        }
-    </script>
 
     <!-- Simple Dropdown Example -->
 
-</body>
+</body> 
+
 
 </html>
