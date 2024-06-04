@@ -67,7 +67,7 @@
                     <h2 style="font-size: 20px;">{{ $product->name }}</h2>
                     <p class="price">{{ $product->price }}</p>
                     <div class="">
-                        <a href="{{ asset('img/upload/' . $product->picture) }}" class=" detail-btn">Detail</a>
+                        <a href="{{ url('/product/' . $product->id) }}" class=" detail-btn">Detail</a>
                         <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">

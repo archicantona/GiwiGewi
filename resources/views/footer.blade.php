@@ -32,6 +32,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function() {
+
+        // Tentukan base URL untuk gambar
+        const baseUrl = "{{ asset('img/upload') }}";
         // Get the popup
         var popup = document.getElementById("cartPopup");
 
@@ -50,7 +53,8 @@
                 data.forEach(function(item) {
                     cartItems += `
                             <div class="cart-item">
-                                <img src="img/upload/${item.product.picture}" alt="${item.product.name}" height="50">
+                            
+                                <img src="${baseUrl}/${item.product.picture}" alt="${item.product.name}" height="50">
                                 <h4>${item.product.name}</h4>
                                 <p>Quantity: ${item.quantity}</p>
                                 <p>Rp. ${item.product.price * item.quantity}</p>
