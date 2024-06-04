@@ -49,7 +49,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
 });
 
-
+Route::get('/products/search', [HalamanController::class, 'search'])->name('products.search');
 Route::get('/produk', [HalamanController::class, 'produk']);
 Route::get('/product/{id}', [HalamanController::class, 'detailproduk']);
 

@@ -18,10 +18,11 @@
             <a class="navbar-brand mx-auto" href="/">
                 <img src="{{ asset('img/logo.png') }}" alt="Profil" width="100">
             </a>
-            <form class="d-flex ms-auto" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form action="{{ route('products.search') }}" method="GET" class="d-flex ms-auto" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" name="query" aria-label="Search">
                 <button class="btn text-white" type="submit" style="background-color: #FB931E;">Search</button>
             </form>
+
             <div class="d-flex align-items-center ms-3">
                 @if(auth()->check())
                 <!-- Jika pengguna sudah login -->

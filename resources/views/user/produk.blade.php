@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-QHpuNzP5tkJ/NlTrEZKN5xubtkopxHJJu6CNKxtEVcGUg5/cDDzVYydWct8lIUkc2Y9EfmUHHdTVZiBe0kxO0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-        
         .navbar-nav .nav-link {
             color: white;
             font-family: 'Open Sans', sans-serif;
@@ -49,7 +48,6 @@
             font-size: 25px;
             cursor: pointer;
         }
-
     </style>
 </head>
 
@@ -60,13 +58,16 @@
     <div class="item-container">
         <div class="section">
             <div class="product-container" style="display: flex; flex-wrap: wrap; gap: 40px">
+                @if($products->isEmpty())
+                <p>No products found</p>
+                @else
                 @foreach ($products as $product)
                 <div class="item">
-                    <img src="img/upload/{{$product->picture}}" alt="Profil" height="180">
+                    <img src="{{ asset('img/upload/' . $product->picture) }}" alt="Profil" height="180">
                     <h2 style="font-size: 20px;">{{ $product->name }}</h2>
                     <p class="price">{{ $product->price }}</p>
                     <div class="">
-                        <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
+                        <a href="{{ asset('img/upload/' . $product->picture) }}" class=" detail-btn">Detail</a>
                         <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -76,18 +77,20 @@
                     </div>
                 </div>
                 @endforeach
+                @endif
             </div>
+
 
         </div>
     </div>
     </div>
 
-    
+
 
 
     @include('footer')
 
-    
+
 </body>
 
 </html>

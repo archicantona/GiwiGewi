@@ -98,4 +98,12 @@ class HalamanController extends Controller
 
         return response()->json(['success' => 'Checkout berhasil!']);
     }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $products = Product::where('name', 'LIKE', "%{$query}%")->get();
+
+        return view('user.produk', compact('products'));
+    }
 }
