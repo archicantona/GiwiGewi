@@ -56,9 +56,17 @@
                 </div>
                 @else
                 <!-- Jika pengguna belum login -->
-                <button class="btn" style="background-color: #FB931E;" type="button" onclick="window.location.href='/login'">
-                    <i class="fas fa-user" style="color: white;"> Login</i>
-                </button>
+                <!-- <div class="dropdown">
+                    <button class="btn dropdown-toggle" style="background-color: #FB931E;" type="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user" style="color: white;"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="/login">Login</a></li>
+                        <li><a class="dropdown-item" href="/register">Register</a></li>
+                    </ul>
+                </div> -->
+                <a class="tombol" href="/login">Login</a>
+                <a class="tombol" href="/register">Register</a>
                 @endif
 
 

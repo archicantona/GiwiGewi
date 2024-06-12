@@ -84,7 +84,13 @@
             <h2 style="font-size: 20px;">{{ $product->name }}</h2>
             <p class="price">{{ $product->price }}</p>
             <div class="">
-                <button class="keranjang-btn">Keranjang</button>
+                <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
+                <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></button>
+                </form>
             </div>
         </div>
         @endforeach

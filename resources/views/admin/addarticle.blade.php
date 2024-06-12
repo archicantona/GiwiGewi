@@ -117,6 +117,7 @@
             <a href="/admin"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
             <a href="/tambahartikel" class="active"><i class="fas fa-plus"></i> Tambah Artikel</a>
+            <a href="/messages"><i class="fas fa-inbox"></i>Pesan</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>

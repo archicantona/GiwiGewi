@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Message</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -72,20 +72,81 @@
         margin-bottom: 20px;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
+    .btn-tambah-produk {
+        padding: 8px 12px;
+        border-radius: 4px;
+        background-color: #ff9933;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
     }
 
-    th,
     td {
-        padding: 10px;
-        border: 1px solid #ddd;
-        text-align: left;
+        border-radius:
+            9px, 9px, 0px, 0px;
+        max-width: 200px;
     }
 
-    th {
-        background-color: #f2f2f2;
+
+
+    .btn-tambah-produk:hover {
+        background-color: darkorange;
+    }
+
+    .pencil {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .pencil .edit-button {
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        background-color: green;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .pencil .edit-button:hover {
+        background-color: darkred;
+        color: white;
+    }
+
+    .trash {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    .trash .delete-button {
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        background-color: red;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+    }
+
+    .trash .delete-button:hover {
+        background-color: darkred;
+        color: white;
+    }
+
+    .trash a {
+        padding: 4px;
+        border-radius: 4px;
+        color: white;
+        background-color: red;
+    }
+
+    .tombol {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        gap: 6px;
     }
 </style>
 
@@ -94,9 +155,9 @@
         <div>
             <img src="{{ asset('img/logo.png') }}" alt="Giwigewi Logo">
             <a href="/admin"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-            <a href="/userorder" class="active"><i class="fas fa-chart-line"></i> User Order</a>
+            <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
             <a href="/tambahartikel"><i class="fas fa-plus"></i> Tambah Artikel</a>
-            <a href="/messages"><i class="fas fa-inbox"></i>Pesan</a>
+            <a href="/messages" class="active"><i class="fas fa-inbox"></i>Pesan</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -105,39 +166,28 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>User Orders</h2>
+            <h2>Pesan</h2>
         </div>
         <table>
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Username</th>
-                    <th>Nama Produk</th>
-                    <th>Quantity</th>
-                    <th>Harga</th>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Isi Pesan</th>
                 </tr>
             </thead>
+
             <tbody>
-                @foreach($orders as $userId => $userOrders)
-                @php
-                $rowspan = $userOrders->count();
-                $first = true;
-                @endphp
-                @foreach($userOrders as $index => $order)
+                @foreach ($messages as $message)
                 <tr>
-                    @if($first)
-                    <td rowspan="{{ $rowspan }}">{{ $loop->parent->iteration }}</td>
-                    <td rowspan="{{ $rowspan }}">{{ $order->user->name }}</td>
-                    @php $first = false; @endphp
-                    @endif
-                    <td>{{ $order->product->name }}</td>
-                    <td>{{ $order->quantity }}</td>
-                    <td>Rp. {{ number_format($order->product->price * $order->quantity, 0, ',', '.') }}</td>
+                    <td>{{ $message->id }}</td>
+                    <td style="max-width: 100px;">{{ $message->name }}</td>
+                    <td>{{ $message->email }}</td>
+                    <td style="text-align: justify;">{{ $message->message }}</td>
                 </tr>
                 @endforeach
-                @endforeach
             </tbody>
-
         </table>
     </div>
 </body>

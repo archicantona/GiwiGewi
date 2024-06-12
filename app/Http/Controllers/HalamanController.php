@@ -80,7 +80,7 @@ class HalamanController extends Controller
         $cartItems = Cart::where('user_id', $userId)->get();
 
         if ($cartItems->isEmpty()) {
-            return response()->json(['error' => 'Keranjang kosong!'], 400);
+            return redirect()->back()->withErrors(['Keranjang kosong!']);
         }
 
         foreach ($cartItems as $item) {
@@ -96,7 +96,7 @@ class HalamanController extends Controller
         // Hapus semua item di keranjang setelah checkout
         Cart::where('user_id', $userId)->delete();
 
-        return response()->json(['success' => 'Checkout berhasil!']);
+        return redirect()->route('produk')->with('success', 'Checkout berhasil!');
     }
 
     public function search(Request $request)

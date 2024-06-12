@@ -178,6 +178,38 @@
             align-items: center;
             justify-content: center;
         }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #fb931d;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e07b00;
+        }
     </style>
 </head>
 
@@ -191,22 +223,35 @@
             <a href="/contact" class="button first-button" style="color: white;">Hubungi Kami</a>
         </div>
         <div class="transaction-container">
-            <h2>Tentang Kami</h2>
+            <h2>Hubungi Kami</h2>
             <div class="transaction">
 
                 <div class="details">
-                    <div class="contact-card">
-                        <img src="{{ asset('img/mail.png') }}" alt="Email Icon">
-                        <h3>Email Business</h3>
-                        <p>Senin - Jumat 08.00 - 20.00 WIB<br>Sabtu - Minggu 09.00 - 21.00 WIB</p>
-                        <a href="mailto:archicantona@gmail.com">Contact Now</a>
-                    </div>
 
                     <div class="contact-card">
                         <img src="{{ asset('img/whatsapp.png') }}" alt="Whatsapp Icon">
                         <h3>Whatsapp Business</h3>
                         <p>Senin - Jumat 08.00 - 20.00 WIB<br>Sabtu - Minggu 09.00 - 21.00 WIB</p>
                         <a href="https://wa.me/6282269149224">Contact Now</a>
+                    </div>
+                    <div class="contact-card" style="width: 400px;">
+                        <img src="{{ asset('img/mail.png') }}" alt="Mail">
+                        <h3>Kritik Saran?</h3>
+
+
+                        @if (session('success'))
+                        <div>{{ session('success') }}</div>
+                        @endif
+
+                        <form action="/contact" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <input type="text" id="name" name="name" placeholder="Nama" required>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                            <textarea id="message" name="message" rows="4" placeholder="Pesan" required></textarea>
+                            <button type="submit">Kirim</button>
+                        </form>
+
+
                     </div>
                 </div>
 

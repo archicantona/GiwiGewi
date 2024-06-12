@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,23 +40,29 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/products', [ProductController::class, 'store'])->name('products.store')->middleware(('userAccess:admin'));
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->middleware(('userAccess:admin'));
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store')->middleware(('userAccess:admin'));
-    Route::get('/articles', [ArticleController::class, 'addarticle'])->name('articles.addarticles');
+    Route::get('/articles', [ArticleController::class, 'addarticle'])->name('articles.addarticles')->middleware(('userAccess:admin'));
+    Route::get('/messages', [MessageController::class, 'messages'])->name('messages')->middleware(('userAccess:admin'));
     Route::post('/cart/add', [HalamanController::class, 'addToCart'])->name('cart.add');
     Route::get('/cart', [HalamanController::class, 'getCart'])->name('cart.get');
     Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
     Route::post('/checkout', [HalamanController::class, 'checkout'])->name('checkout');
     Route::get('/userinfo', [InfoController::class, 'userinfo'])->name('userinfo');
+    Route::get('/profile/edit', [SesiController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile', [SesiController::class, 'update'])->name('profile.update');
+
     Route::get('/riwayattransaksi', [InfoController::class, 'transactionHistory'])->name('transaction.history');
     Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
 });
 
 Route::get('/products/search', [HalamanController::class, 'search'])->name('products.search');
-Route::get('/produk', [HalamanController::class, 'produk']);
+Route::get('/produk', [HalamanController::class, 'produk'])->name('produk');
 Route::get('/product/{id}', [HalamanController::class, 'detailproduk']);
 
 Route::get('/artikel', [ArticleController::class, 'artikel']);
 Route::get('/artikel/{id}', [ArticleController::class, 'isiartikel']);
 
+
+Route::post('/contact', [MessageController::class, 'store']);
 
 Route::get('/about', function () {
     return view('user/about');

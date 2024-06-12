@@ -409,3 +409,14 @@ h2 {
         #cartBtn:hover {
             background-color: #0056b3;
         }
+
+ .tombol{
+    margin: 2px;
+    background-color: white;
+    color: #fb931e;
+    border: none;
+    padding: 4px 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+        }
