@@ -1,11 +1,19 @@
 .content1 {
     background-color: #ffc481;
-    color: #333;
+    color: #754b04;
     margin: 0;
     padding: 0;
 }
 
-.kiri {
+.left .h1 {
+    font-family: sans-serif;
+    max-width: 360px;
+    padding-top: 20px;
+    padding: 20px;
+    font-size: 24px;
+    text-align: left;
+}
+.left .p {
     font-family: sans-serif;
     max-width: 360px;
     padding-top: 20px;
@@ -16,7 +24,7 @@
 
 .shop-now {
     margin-top: 30px;
-    background-color: #00c6ae;
+    background-color: #08A771;
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -26,12 +34,12 @@
 }
 
 .shop-now:hover {
-    background-color: #009a8b;
+    background-color: rgb(87, 202, 190);
 }
 
 .content2 {
     display: flex;
-    background-color: #029a66;
+    background-color: #08A771;
     color: white;
     margin: 0;
     padding: 0;
@@ -46,7 +54,7 @@
 }
 
 .section1 {
-    background-color: #029a66;
+    background-color: #08A771;
     padding: 20px;
     text-align: center;
     border-radius: 10px;
@@ -55,12 +63,12 @@
 }
 
 .section1 img {
-    width: 150px;
+    width: 200px;
     margin-bottom: 20px;
 }
 
 .section1 p {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: #fff;
 }
 

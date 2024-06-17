@@ -36,7 +36,7 @@
     width: 30%;
 ">
                 <h1>Jangan tinggalkan Kota Bengkulu Tanpa</h1>
-                <img src="http://127.0.0.1:8000/img/logo_nama.png" style="max-height: 30px;">
+                <img src="http://127.0.0.1:8000/img/logo_nama.png" style="max-height: 60px;">
                 <p>Pusat Oleh-oleh dan camilan khas Bengkulu</p>
                 <a href="/produk" class="shop-now">Shop Now</a>
             </div>

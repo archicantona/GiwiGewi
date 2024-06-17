@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <title>navbar</title>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg" style="background-color: #FB931E;">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +29,7 @@
             </a>
             <form action="{{ route('products.search') }}" method="GET" class="d-flex ms-auto" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" name="query" aria-label="Search">
-                <button class="btn text-white" type="submit" style="background-color: #FB931E;">Search</button>
+                <button class="btn" type="submit">Search</button>
             </form>
 
             <div class="d-flex align-items-center ms-3">
@@ -68,9 +77,9 @@
                 <a class="tombol" href="/login">Login</a>
                 <a class="tombol" href="/register">Register</a>
                 @endif
-
-
             </div>
         </div>
     </div>
 </nav>
+</body>
+</html>
