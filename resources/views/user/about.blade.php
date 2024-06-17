@@ -78,6 +78,12 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .transaction-container h2 {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }        
+
         .transaction-item {
             display: flex;
             justify-content: space-between;
@@ -134,25 +140,19 @@
             margin-bottom: 20px;
         }
 
-        details {
+        .details {
             display: flex;
         }
 
         .card {
             border: #ddd;
-            padding: 20px;
+            padding: 5px;
             text-align: justify;
             margin: 10px;
             width: 400px;
             display: inline-block;
-
         }
 
-        .card p {
-            margin: 0;
-            font-size: 16px;
-            color: #666;
-        }
     </style>
 </head>
 
@@ -166,7 +166,7 @@
             <a href="/contact" class="button second-button" style="color: black;">Hubungi Kami</a>
         </div>
         <div class="transaction-container">
-            <h2>About</h2>
+            <h2>TENTANG KAMI</h2>
             <div class="transaction-item">
                 <p>
                     Home Industri Giwigewi ini mulai mengolah buah jeruk kalamansi untuk dijadikan sirup yang berbentuk Squash mulai dari tahun 2012. Keunggulan produk ini selain mempunyai citarasa harum dan khas sekaligus sirup kalamansi ini juga sangat bermanfaat bagi kesehatan tubuh bila dikonsumsi secara teratur karena kaya Vitamin C.
@@ -174,23 +174,29 @@
                 <div class="details">
                     <div class="card">
                         <strong>Visi</strong>
-                        <p> Menjadi perusahaan penghasil Kalamansi squash yang bermutu dari olahan buah jeruk kalamansi dan mampu menguasai pasar nasional.</p>
+                        <p>Menjadi perusahaan penghasil Kalamansi squash yang bermutu dari olahan buah jeruk kalamansi dan mampu menguasai pasar nasional.</p>
                     </div>
-
                     <div class="card">
                         <strong>Misi</strong>
-                        <p>1. Menggunakan bahan baku yang berkualitas.</p>
-                        <p>2. Desain kemasan dan penampilan produk semenarik mungkin.</p>
-                        <p>3. Marketing dilakukan secara maksimal dalam skala kecil dan skala besar.</p>
-                        <p>4. Meningkatkan kesejahteraan masyarakat dan menciptakan lingkungan yang sehat.</p>
+                        <ul>
+                        <li>Menggunakan bahan baku yang berkualitas.</li>
+                        <li>Desain kemasan dan penampilan produk semenarik mungkin.</li>
+                        <li>Marketing dilakukan secara maksimal dalam skala kecil dan skala besar.</li>
+                        <li>Meningkatkan kesejahteraan masyarakat dan menciptakan lingkungan yang sehat.</li>
+                        </ul>
+                    <div class="card">
+                        <strong>BUDAYA</strong>
+                        <ul>
+                        <li>Menyihatkan</li>
+                        <li>Mensejahterakan</li>
+                        <li>Membahagiakan</li>
+                        <li>Kearifan Lokal</li>
+                        <li>Humanis</li>
+                        </ul>
+                    </div>
                     </div>
                 </div>
-
-
-
             </div>
-
-
         </div>
     </div>
     @include('footer')

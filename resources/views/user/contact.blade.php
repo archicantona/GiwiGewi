@@ -126,6 +126,7 @@
         }
 
         .transaction-container h2 {
+            font-weight: bold;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -157,6 +158,7 @@
             margin: 0;
             margin-bottom: 10px;
             color: #666;
+            font-size: 17px;
         }
 
         .contact-card a {
@@ -175,7 +177,7 @@
 
         .details {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
         }
 
@@ -223,7 +225,7 @@
             <a href="/contact" class="button first-button" style="color: white;">Hubungi Kami</a>
         </div>
         <div class="transaction-container">
-            <h2>Hubungi Kami</h2>
+            <h2>HUBUNGI KAMI</h2>
             <div class="transaction">
 
                 <div class="details">
@@ -236,7 +238,7 @@
                     </div>
                     <div class="contact-card" style="width: 400px;">
                         <img src="{{ asset('img/mail.png') }}" alt="Mail">
-                        <h3>Kritik Saran?</h3>
+                        <h3>Pesan & Kesan</h3>
 
 
                         @if (session('success'))

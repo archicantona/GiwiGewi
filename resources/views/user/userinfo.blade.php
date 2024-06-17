@@ -140,12 +140,12 @@
     @include('navbar')
     <div class="main-container">
         <div class="button-container">
-            <a href="/userinfo" class="button first-button">User Info</a>
-            <a href="/riwayattransaksi" class="button second-button" style="color: black;">Riwayat Pesanan</a>
+            <a href="/userinfo" class="button first-button">Informasi Akun</a>
+            <a href="/riwayattransaksi" class="button second-button" style="color: black;">Riwayat Transaksi</a>
         </div>
         <div class="transaction-container">
 
-            <h2>Informasi Akun</h2>
+            <h2>INFORMASI AKUN</h2>
             <div class="transaction-item">
 
                 <div class="userdetails" style="font-size: 20px;">

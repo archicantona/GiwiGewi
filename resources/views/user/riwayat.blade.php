@@ -115,7 +115,7 @@
         }
 
         .transaction-item .btn {
-            background-color: #ffc107;
+            background-color: #FB931E;
             color: white;
             border: none;
             padding: 5px 10px;
@@ -124,7 +124,8 @@
         }
 
         .transaction-item .btn:hover {
-            background-color: #e0a800;
+            color:#FB931E;
+            background-color: #FFDD55;
         }
 
         .transaction-container h2 {
@@ -138,12 +139,12 @@
     @include('navbar')
     <div class="main-container">
         <div class="button-container">
-            <a href="/userinfo" class="button second-button">User Info</a>
-            <a href="/riwayattransaksi" class="button first-button" style="color: white;">Riwayat Pesanan</a>
+            <a href="/userinfo" class="button second-button">Informasi Akun</a>
+            <a href="/riwayattransaksi" class="button first-button" style="color: white;">Riwayat Transaksi</a>
         </div>
         <div class="transaction-container">
 
-            <h2>Riwayat Transaksi</h2>
+            <h2>RIWAYAT TRANSAKSI</h2>
             @foreach($orders as $order)
             <div class="transaction-item">
                 <div class="details">
