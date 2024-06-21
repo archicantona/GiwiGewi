@@ -1,23 +1,24 @@
+
 <footer class="footer"> <a href="/">
         <img src="{{ asset('img/logo.png') }}" alt="Profil" width="160" class="mx-auto">
     </a>
     <div class="footer-section">
-
         <h2>GIWIGEWI</h2>
-        <p>
-            Jl.Budi Utomo 3, Kelurahan Beringin Raya,
+        <p>Jl.Budi Utomo 3, Kelurahan Beringin Raya,
             Kecamatan Muara Bangkahulu Kota Bengkulu</p>
     </div>
     <div class="footer-section">
         <h2>LINKS</h2>
         <ul>
-            <li><a href="/about">Tentang Kami</a></li>
+            <li><a href="/about">  Tentang Kami</a></li>
             <li><a href="/produk">Produk Kami</a></li>
         </ul>
     </div>
     <div class="footer-section">
         <h2>SUPPORT</h2>
+        <ul>
         <li><a href="/contact">Contact Us</a></li>
+        </ul>
         <!-- Sisipkan ikon media sosial di sini -->
         <div class="social-icons">
             <a href="https://www.tiktok.com/@giwigewi.official" target="_blank">

@@ -72,7 +72,7 @@
     <div class="content3">
         <div>
             <div class="pilihan_produk">
-                PILIHAN PRODUK
+                PRODUK PILIHAN
             </div>
         </div>
     </div>

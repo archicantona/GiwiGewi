@@ -54,16 +54,16 @@
 }
 
 .section1 {
+    text-align: center;
     background-color: #08A771;
     padding: 20px;
-    text-align: center;
     border-radius: 10px;
     margin: 20px auto;
     max-width: 800px;
 }
 
 .section1 img {
-    width: 200px;
+    width: 300px;
     margin-bottom: 20px;
 }
 
@@ -75,6 +75,7 @@
 .section1 p .brand {
     color: #ff6600;
     font-weight: bold;
+    text-align: justify;
 }
 
 .banner {
@@ -153,11 +154,13 @@
     margin-top: 40px;
     margin-bottom: 40px;
     padding: 8px;
-    color: black;
-    font-size: 20px;
-    border: 1px solid black;
+    color: #636161;
+    font-size: 25px;
+    border: 2px solid grey;
     border-spacing: 10px;
     font-weight: 100;
+    font-weight: 500;
+    background-color: white;
 }
 
 .content4 {

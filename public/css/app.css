@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 .body {
+    font-family: "Lato", sans-serif;
     margin: 0;
 }
 .main-container {
@@ -13,6 +14,7 @@
 }
 
 .footer {
+    font-family: "Lato", sans-serif;
     background-color: #fb931e;
     color: white;
     padding: 20px;
@@ -37,6 +39,13 @@
 .footer-section ul li a {
     color: white;
     text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .footer-bottom {
