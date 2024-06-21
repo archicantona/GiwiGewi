@@ -53,6 +53,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile/edit', [SesiController::class, 'edit'])->name('profile.edit');
     Route::put('/profile', [SesiController::class, 'update'])->name('profile.update');
 
+    Route::get('/tambahartikel', function () {
+        return view('admin/addarticle');
+    })->middleware(('userAccess:admin'));
+
+    
     Route::get('/riwayattransaksi', [InfoController::class, 'transactionHistory'])->name('transaction.history');
     Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
 });

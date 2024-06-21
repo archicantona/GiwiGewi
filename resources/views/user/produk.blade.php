@@ -59,7 +59,7 @@
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <input type="hidden" name="quantity" value="1">
-                            <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i></button>
+                            <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;">Keranjang</i></button>
                         </form>
                     </div>
                 </div>

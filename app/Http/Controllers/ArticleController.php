@@ -7,12 +7,14 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    //menampilkan data artikel
     public function addarticles()
     {
         $articles = Article::all();
         return view('admin.artikel', compact('articles'));
     }
 
+    //menambahkan data artikel
     public function store(Request $request)
     {
         $data = Article::create($request->all());
@@ -25,6 +27,7 @@ class ArticleController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
+    //
     public function artikel()
     {
         $articles = Article::all();
