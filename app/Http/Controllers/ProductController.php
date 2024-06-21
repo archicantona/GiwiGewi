@@ -52,5 +52,43 @@ class ProductController extends Controller
         return redirect()->route('admin.dashboard');
     }
 
-  
+    public function edit($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('admin.productedit', compact('product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'description' => 'nullable|string',
+            'price' => 'required|numeric',
+            'stock_quantity' => 'required|integer',
+            'storage_period' => 'nullable|string',
+            'no_BPOM' => 'nullable|string',
+            'category' => 'nullable|string',
+            'weight' => 'nullable|numeric',
+        ]);
+
+        $product = Product::findOrFail($id);
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->stock_quantity = $request->input('stock_quantity');
+        $product->storage_period = $request->input('storage_period');
+        $product->no_BPOM = $request->input('no_BPOM');
+        $product->category = $request->input('category');
+        $product->weight = $request->input('weight');
+
+        if ($request->hasFile('picture')) {
+            $request->file('picture')->move('img/upload/', $request->file('picture')->getClientOriginalName());
+            $product->picture = $request->file('picture')->getClientOriginalName();
+        }
+
+        $product->save();
+
+        return redirect()->route('admin.dashboard')->with('success', 'Product updated successfully');
+    }
 }

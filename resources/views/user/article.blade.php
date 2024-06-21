@@ -18,7 +18,7 @@
             font-size: 18px;
         }
 
-        .container {
+        .articel-container {
             padding: 20px;
             display: flex;
         }
@@ -65,7 +65,7 @@
 
 <body>
     @include('navbar')
-    <div class="container">
+    <div class="articel-container">
         <div class="row">
             @foreach($articles as $articles)
             <div class="col-md-4">

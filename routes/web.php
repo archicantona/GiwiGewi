@@ -39,10 +39,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products/create', [ProductController::class, 'create'])->name('products.create')->middleware(('userAccess:admin'));
     Route::post('/products', [ProductController::class, 'store'])->name('products.store')->middleware(('userAccess:admin'));
     Route::delete('/products/{id}', [ProductController::class, 'destroy'])->middleware(('userAccess:admin'));
+    Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('products.edit')->middleware(('userAccess:admin'));
+    Route::post('/product/{id}/edit', [ProductController::class, 'update'])->name('products.update')->middleware(('userAccess:admin'));
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store')->middleware(('userAccess:admin'));
     Route::get('/articles', [ArticleController::class, 'addarticle'])->name('articles.addarticles')->middleware(('userAccess:admin'));
     Route::get('/messages', [MessageController::class, 'messages'])->name('messages')->middleware(('userAccess:admin'));
     Route::post('/cart/add', [HalamanController::class, 'addToCart'])->name('cart.add');
+    Route::post('/cart/update-quantity', [HalamanController::class, 'updateCartQuantity'])->name('cart.updateQuantity');
     Route::get('/cart', [HalamanController::class, 'getCart'])->name('cart.get');
     Route::post('/cart/remove', [HalamanController::class, 'removeFromCart'])->name('cart.remove');
     Route::post('/checkout', [HalamanController::class, 'checkout'])->name('checkout');

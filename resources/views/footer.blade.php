@@ -19,6 +19,17 @@
         <h2>SUPPORT</h2>
         <li><a href="/contact">Contact Us</a></li>
         <!-- Sisipkan ikon media sosial di sini -->
+        <div class="social-icons">
+            <a href="https://www.tiktok.com/@giwigewi.official" target="_blank">
+                <img src="{{ asset('img/tiktok.webp') }}" alt="TikTok" style="width: 24px;">
+            </a>
+            <a href="https://www.instagram.com/giwigewi.official/" target="_blank">
+                <img src="{{ asset('img/instagram.png') }}" alt="Instagram" style="width: 24px;">
+            </a>
+            <a href="https://shopee.co.id/giwigewiofficial" target="_blank">
+                <img src="{{ asset('img/shopee.webp') }}" alt="Shopee" style="width: 24px;">
+            </a>
+        </div>
     </div>
     <div class="footer-bottom">
         <hr>
@@ -55,7 +66,7 @@
                             <div class="cart-item">
                             
                                 <img src="${baseUrl}/${item.product.picture}" alt="${item.product.name}" height="50">
-                                <h4>${item.product.name}</h4>
+                                <div  style="width: 130px;">${item.product.name}</div>
                                 <p>Quantity: ${item.quantity}</p>
                                 <p>Rp. ${item.product.price * item.quantity}</p>
                                 <a href="/cart/remove" class="remove-item" data-id="${item.id}">Hapus</a>

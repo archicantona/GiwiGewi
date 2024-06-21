@@ -315,7 +315,7 @@ h2 {
             position: fixed;
             top: 0;
             right: 0;
-            width: 400px;
+            width: 500px;
             height: 100%;
             background-color: white;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -344,6 +344,7 @@ h2 {
 
         .cart-item {
             display: flex;
+            gap: 5%;
             align-items: center;
             margin-bottom: 20px;
             border-bottom: 1px solid #ddd;

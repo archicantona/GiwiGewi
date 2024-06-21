@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Produk</title>
+    <title>Edit Produk</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -153,62 +153,53 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Informasi Produk</h2>
+            <h2>Edit Produkk</h2>
         </div>
         <div class="form-container">
 
-            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="form-group">
-                    <div style="flex: 1;">
-                        <label for="name">Nama Produk</label>
-                        <input type="text" id="product_name" name="name" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="picture">Gambar Produk</label>
-                        <input type="file" id="picture" name="picture" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div style="flex: 1;">
-                        <label for="price">Harga Produk</label>
-                        <input type="number" id="price" name="price" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="stock_quantity">Stok</label>
-                        <input type="number" id="stock_quantity" name="stock_quantity" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="description">Deskripsi Produk</label>
-                    <textarea id="description" name="description" required></textarea>
-                </div>
-                <div class="form-group">
-                    <div style="flex: 1;">
-                        <label for="storage_period">Durasi Penyimpanan</label>
-                        <input type="number" id="storage_period" name="storage_period" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="no_BPOM">Nomor BPOM</label>
-                        <input type="text" id="no_BPOM" name="no_BPOM" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div style="flex: 1;">
-                        <label for="category">Category</label>
-                        <input type="text" id="category" name="category" required>
-                    </div>
-                    <div style="flex: 1;">
-                        <label for="weight">Berat (Gram)</label>
-                        <input type="number" id="weight" name="weight" required>
-                    </div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn-discard">Discard</button>
-                    <button type="submit" class="btn-save">Save Produk</button>
-                </div>
-            </form>
+        <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="picture">Picture</label>
+                <input type="file" class="form-control" id="picture" name="picture">
+                @if($product->picture)
+                <img src="{{ asset('img/upload/' . $product->picture) }}" alt="Product Image" height="100">
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description">{{ $product->description }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
+            </div>
+            <div class="form-group">
+                <label for="stock_quantity">Stock Quantity</label>
+                <input type="number" class="form-control" id="stock_quantity" name="stock_quantity" value="{{ $product->stock_quantity }}" required>
+            </div>
+            <div class="form-group">
+                <label for="storage_period">Storage Period</label>
+                <input type="text" class="form-control" id="storage_period" name="storage_period" value="{{ $product->storage_period }}">
+            </div>
+            <div class="form-group">
+                <label for="no_BPOM">No BPOM</label>
+                <input type="text" class="form-control" id="no_BPOM" name="no_BPOM" value="{{ $product->no_BPOM }}">
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category" name="category" value="{{ $product->category }}">
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                <input type="text" class="form-control" id="weight" name="weight" value="{{ $product->weight }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
 
         </div>
     </div>

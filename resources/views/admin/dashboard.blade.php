@@ -194,7 +194,7 @@
                 <td>
                     <div class="tombol">
                         <div class="pencil">
-                            <button href="#" class="edit-button"><i class="fas fa-pencil-alt"></i></button>
+                            <a href="{{ route('products.edit', $product->id) }}" class="edit-button"><i class="fas fa-pencil-alt"></i></a>
                         </div>
                         <div class="trash">
                             <form action="{{ url('/products/' . $product->id) }}" method="POST" style="display:inline;">
