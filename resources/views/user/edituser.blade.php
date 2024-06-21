@@ -160,7 +160,7 @@
 
                 @if (session('success'))
                 <div class="alert alert-success">
-                    {{ session('success') }}
+                    Profil Berhasil Di Update
                 </div>
                 @endif
 

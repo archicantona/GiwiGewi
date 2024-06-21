@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <title>navbar</title>
 </head>
 <body>
@@ -57,6 +59,9 @@
                         <div id="cartTotal">
                             <!-- Cart total will be shown here -->
                         </div>
+                        <div class="alert alert-primary" role="alert">
+                                 A simple primary alert—check it out!
+                                </div>
                         <form action="{{ route('checkout') }}" method="POST">
                             @csrf
                             <button type="submit" id="checkoutBtn" class="btn btn-warning">Checkout</button>
