@@ -1,12 +1,6 @@
 .navbar .nav-item {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar .nav-item li {
-    margin-left: 2rem;
 }
 
 .navbar .nav-item a {
@@ -14,7 +8,6 @@
     color: white;
     font-size: 20px;
     transition: color 0.3s, background-color 0.3s;
-    padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 

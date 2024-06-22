@@ -1,0 +1,63 @@
+ /* Style untuk latar belakang gambar */
+ body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style untuk form login */
+.login-container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+    /* Opacity */
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    border-radius: 60px 0 0 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    outline: 20px solid #048D5E;
+    grid-template-columns: 100px 400px auto;
+    gap: 20px;
+
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.login-container .background {
+    height: 100%;
+}
+
+/* Style untuk tombol login */
+.btn-login {
+    background-color: orange;
+    border: none;
+}
+
+.btn-login:hover {
+    background-color: darkorange;
+}
+
+/* grid untuk formgroup */
+.formtag {
+    display: grid;
+    grid-template-columns: 100px 400px auto;
+    gap: 10px;
+    padding: 10px;
+}

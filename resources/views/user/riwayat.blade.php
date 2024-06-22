@@ -15,7 +15,7 @@
     <style>
         .navbar-nav .nav-link {
             color: white;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
             font-size: 18px;
         }
 

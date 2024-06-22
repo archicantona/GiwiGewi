@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,73 +10,61 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
-        .navbar-nav .nav-link {
-            color: white;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 18px;
-        }
-
-        .articel-container {
+        .article-container {
             padding: 20px;
             display: flex;
         }
-
+        
         .row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
         }
-
+        
         .col-md-4 {
             flex: 1 1 30%;
             max-width: 30%;
             margin: 10px;
         }
-
-        .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-img-top {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .card-text {
-            font-size: 1rem;
-            margin-bottom: 1.25rem;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
     </style>
 </head>
 
-<body>
+<body style="background-color: #f3f3f3;">
+
     @include('navbar')
-    <div class="articel-container">
-        <div class="row">
-            @foreach($articles as $articles)
+
+    <h1 class="justify-content-center text-center p-3">ARTIKEL KAMI</h1>
+    <div class="article-container text-center justify-content-center">
+        <div class="row gx-5">
+            @foreach($articles as $article)
             <div class="col-md-4">
-                <div class="card mb-4">
-                    <img src="img/upload/article/{{$articles-> image}}" class="card-img-top" alt="{{ $articles->title }}" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $articles->title }}</h5>
-                        <p class="card-text">{{ Str::limit($articles->content, 100) }}</p>
-                        <a href="{{ url('/artikel/' . $articles->id) }}" class="btn btn-primary">Read More</a>
+
+                <div class="card-container" data-bs-toggle="tooltip" data-bs-original-title="{{ $article->title }}">
+
+                    <div class="card-article-img">
+                        <img src="img/upload/article/{{ $article->image }}" class="card-article-img-top"
+                            alt="{{ $article->title }}" style="height: 200px; object-fit: cover;">
                     </div>
+
+                    <div class="card-article-title-container">
+                        <p class="card-article-title text-center">{{ $article->title }}</p>
+                    </div>
+
+                    <div class="card-article-body">
+                        <p class="card-article-text">{{ Str::limit($article->content, 120) }}</p>
+                    </div>
+
+                    <div class="card-article-footer d-flex justify-content-center text-body-secondary">
+                        <a href="{{ url('/artikel/' . $article->id) }}" class="btn w-100 btn-primary">Read More</a>
+                    </div>
+
+                    <div class="card-article-footer d-flex justify-content-center text-body-secondary">
+                        <p class="text-secondary">{{ $article->created_at }}</p>
+                    </div>
+
                 </div>
+
             </div>
             @endforeach
         </div>
@@ -84,7 +72,15 @@
 
     @include('footer')
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
 </body>
 
 </html>

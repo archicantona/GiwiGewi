@@ -11,7 +11,7 @@
 </head>
 <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Lato', sans-serif;
         margin: 0;
         padding: 0;
     }
