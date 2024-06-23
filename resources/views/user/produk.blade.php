@@ -11,36 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-QHpuNzP5tkJ/NlTrEZKN5xubtkopxHJJu6CNKxtEVcGUg5/cDDzVYydWct8lIUkc2Y9EfmUHHdTVZiBe0kxO0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body{
-            background-color: #f3f3f3
-        }
-        .navbar-nav .nav-link {
-            color: white;
-            font-family: 'Lato', sans-serif;
-            font-size: 18px;
-        }
-        
-        .menu-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .cart-popup-content {
-            padding: 20px;
-        }
-        
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 25px;
-            cursor: pointer;
-        }
-    </style>
 </head>
 
-<body>
+<body style="background-color: #f3f3f3">
     
     @include('navbar')
     

@@ -65,91 +65,25 @@
     <div class="content4 p-5">
         @foreach ($randomProducts as $product)
         <div class="item">
-            <img src="img/upload/{{$product->picture}}" alt="Profil" width="180">
-            <h2 style="font-size: 20px;">{{ $product->name }}</h2>
-            <p class="price">{{ $product->price }}</p>
+            <img src="{{ asset('img/upload/' . $product->picture) }}" alt="Profil" height="180">
+            <p class="product-names text-lg-start">{{ $product->name }}</p>
+            <p class="price text-start">Rp. {{ $product->price }}</p>
             <div class="">
-                <a href="{{ url('/product/' . $product->id) }}" class="detail-btn">Detail</a>
+                <a href="{{ url('/product/' . $product->id) }}" class=" detail-btn">Detail</a>
                 <form action="{{ route('cart.add') }}" method="POST" style="display: inline;">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     <input type="hidden" name="quantity" value="1">
-                    <button type="submit" class="keranjang-btn"><i class="fas fa-cart-plus" style="color: white;"></i> Keranjang</button>
+                    <button type="submit" class="keranjang-btn">
+                        <i class="fas fa-cart-plus" style="color: white;"></i> Keranjang
+                    </button>
                 </form>
             </div>
         </div>
         @endforeach
     </div>
     
-    {{-- <section class="content4">
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                        <i class="fa fa-arrow-left"></i>
-                    </a>
-                    <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                        <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-                <div class="col-12">
-                    <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            @foreach ($randomProducts->chunk(6) as $key => $chunk)
-                            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                                <div class="row">
-                                    @foreach ($chunk as $product)
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="img/upload/{{ $product->picture }}">
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{ $product->name }}</h4>
-                                                <p class="card-text">{{ $product->price }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            @endforeach
-                            @foreach ($randomProducts->chunk(6) as $key => $chunk)
-                            <div class="carousel-item">
-                                <div class="row">
-                                    @foreach ($chunk as $product)
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="img/upload/{{ $product->picture }}">
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{ $product->name }}</h4>
-                                                <p class="card-text">{{ $product->price }}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            @endforeach
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    
-    
-    
-    
-    
     @include('footer')
-    
     
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
