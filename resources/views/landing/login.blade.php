@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Masuk ke Giwigewi</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/entry.css') }}">
 </head>
@@ -36,7 +36,7 @@
                     <button type="submit" class="btn btn-lg btn-login w-100">LOGIN</button>
                 </div>
                 <div class="mb-3">
-                    <p class="text-center text-body-secondary">Belum punya akun? <a class="text-primary" href="/register">Register di sini</a></p>
+                    <p class="text-center text-body-secondary">Belum punya akun? <a class="text-primary" href="/register">Register</a></p>
                 </div>
             </form>
         </div>

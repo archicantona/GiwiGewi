@@ -117,7 +117,7 @@
         }
 
         .transaction-item .btn {
-            background-color: #ffc107;
+            background-color: darkorange;
             color: white;
             border: none;
             padding: 5px 10px;
@@ -126,7 +126,8 @@
         }
 
         .transaction-item .btn:hover {
-            background-color: #e0a800;
+            color: grey;
+            background-color: orange;
         }
 
         .transaction-container h2 {
@@ -140,12 +141,12 @@
     @include('navbar')
     <div class="main-container">
         <div class="button-container">
-            <a href="/userinfo" class="button first-button">User Info</a>
+            <a href="/userinfo" class="button first-button">Informasi Akun</a>
             <a href="/riwayattransaksi" class="button second-button" style="color: black;">Riwayat Pesanan</a>
         </div>
         <div class="transaction-container">
 
-            <h2>Informasi Akun</h2>
+            <h2>INFORMASI AKUN</h2>
             <div class="transaction-item">
 
                 @if ($errors->any())

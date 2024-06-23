@@ -26,7 +26,7 @@
                 @foreach ($products as $product)
                 <div class="item">
                     <img src="{{ asset('img/upload/' . $product->picture) }}" alt="Profil" height="180">
-                    <p class="product-names text-lg-start">{{ $product->name }}</p>
+                    <p class="product-names text-lg-start font-weight-bold">{{ $product->name }}</p>
                     <p class="price text-start">Rp. {{ $product->price }}</p>
                     <div class="">
                         <a href="{{ url('/product/' . $product->id) }}" class=" detail-btn">Detail</a>

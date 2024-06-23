@@ -1,5 +1,5 @@
- /* Style untuk latar belakang gambar */
- body {
+/* Style untuk latar belakang gambar */
+body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -25,10 +25,9 @@
     left: 30%;
     border-radius: 60px 0 0 60px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    outline: 20px solid #048D5E;
+    outline: 20px solid #048d5e;
     grid-template-columns: 100px 400px auto;
     gap: 20px;
-
 }
 
 .login-container {
@@ -46,12 +45,15 @@
 
 /* Style untuk tombol login */
 .btn-login {
-    background-color: orange;
+    color: white;
+    font-weight: bold;
+    background-color: darkorange;
     border: none;
 }
 
 .btn-login:hover {
-    background-color: darkorange;
+    color: grey;
+    background-color: orange;
 }
 
 /* grid untuk formgroup */

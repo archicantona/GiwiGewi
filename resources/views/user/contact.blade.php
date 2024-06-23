@@ -20,7 +20,7 @@
         }
 
         .main-container {
-            display: flex;
+            display: flex-start;
         }
 
 
@@ -222,10 +222,10 @@
     <div class="main-container">
         <div class="button-container">
             <a href="/about" class="button second-button">Tentang Kami</a>
-            <a href="/contact" class="button first-button" style="color: white;">Hubungi Kami</a>
+            <a href="/contact" class="button first-button" style="color: white;">Kontak Informasi</a>
         </div>
         <div class="transaction-container">
-            <h2>HUBUNGI KAMI</h2>
+            <h2>KONTAK INFORMASI</h2>
             <div class="transaction">
 
                 <div class="details">

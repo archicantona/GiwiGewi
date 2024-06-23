@@ -166,7 +166,7 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Products</h2>
+            <h2>Daftar Produk</h2>
             <a href="/products/create" class="btn-tambah-produk">+ Tambah Produk</a>
         </div>
         <table>

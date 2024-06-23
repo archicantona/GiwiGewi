@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar ke Giwigewi</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <style>
         /* Style untuk latar belakang gambar */
         body {
@@ -54,12 +57,16 @@
         
         /* Style untuk tombol login */
         .btn-login {
-            background-color: orange;
+            color: white;
+            font-weight: bold;
+            font-family: 'Lato',sans-serif;
+            background-color: darkorange;
             border: none;
         }
         
         .btn-login:hover {
-            background-color: darkorange;
+            color: grey;
+            background-color: orange;
         }
         
         /* grid untuk formgroup */
@@ -112,7 +119,7 @@
                     <button type="submit" class="btn btn-lg btn-login w-100">REGISTER</button>
                 </div>
                 <div class="mb-3">
-                    <p class="text-center text-body-secondary">Sudah punya akun? <a class="text-primary" href="/login">Login di sini</a></p>
+                    <p class="text-center text-body-secondary">Sudah punya akun? <a class="text-primary" href="/login">login</a></p>
                 </div>
             </form>
         </div>
