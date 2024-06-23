@@ -1,8 +1,21 @@
+body {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+    margin: 0;
+}
+
 .content1 {
     background-color: #ffc481;
     color: #754b04;
     margin: 0;
     padding: 0;
+}
+
+.content1 .h1{
+    font-weight: bolder;
 }
 
 .left .h1 {

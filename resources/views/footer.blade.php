@@ -88,8 +88,20 @@
         // Get the button that opens the popup
         var btn = document.getElementById("cartBtn");
         
+        var btnCheckout = document.getElementById("checkoutBtn");
+
+        var btnAddProduct = document.getElementById("addProductToCart");
         
-        var span = document.getElementsByClassName("close")[0];     
+        var span = document.getElementsByClassName("close")[0]; 
+
+        btnAddProduct.onclick = function() {
+            // Check if there's a success message from PHP
+            // var successMessage = "{{ session('success') }}";
+            var successMessage = "Produk berhasil ditambahkan ke keranjang!";
+            if (successMessage) {
+                alert(successMessage); // Show an alert with the success message
+            }
+        }
         
         btn.onclick = function() {
             popup.style.display = "block";
@@ -98,20 +110,29 @@
                 var cartTotal = 0;
                 data.forEach(function(item) {
                     cartItems += `
-                        <div class="cart-item">
-                            <img src="${baseUrl}/${item.product.picture}" alt="${item.product.name}" height="50">
-                            <div style="width: 130px;">${item.product.name}</div>
-                            <p>Quantity: ${item.quantity}</p>
-                            <p>Rp. ${item.product.price * item.quantity}</p>
-                            <a href="/cart/remove" class="remove-item" data-id="${item.id}">Hapus</a>
-                        </div>
-                    `;
+                <div class="cart-item">
+                    <img src="${baseUrl}/${item.product.picture}" alt="${item.product.name}" height="50">
+                    <div style="width: 130px;">${item.product.name}</div>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p>Rp. ${item.product.price * item.quantity}</p>
+                    <a href="/cart/remove" class="remove-item" data-id="${item.id}">Hapus</a>
+                </div>
+            `;
                     cartTotal += item.product.price * item.quantity;
                 });
                 var formattedTotal = number_format(cartTotal, 0, ',', '.');
                 $("#cartItems").html(cartItems);
                 $("#cartTotal").html(`<h3>Subtotal: Rp. ${formattedTotal}</h3>`);
             });
+        }
+
+        btnCheckout.onclick = function() {
+            // Check if there's a success message from PHP
+            // var successMessage = "{{ session('success') }}";
+            var successMessage = "Checkout berhasil!";
+            if (successMessage) {
+                alert(successMessage); // Show an alert with the success message
+            }
         }
         
         function number_format(number, decimals, decPoint, thousandsSep) {
