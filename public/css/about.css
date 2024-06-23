@@ -30,3 +30,65 @@ strong {
     font-size: 20px;
     color: #555;
 }
+
+/** **/
+.contact-info-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-menu-about {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: solid 1px;
+    border-color: #fb931d;
+    /* Remove underline */
+}
+
+.first-button {
+    background-color: #fb931d;
+    position: relative;
+    z-index: 2;
+    border: solid 1px;
+    border-color: #fb931d;
+}
+
+.second-button {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 1;
+    color: black;
+    border: solid 1px;
+    border-color: #fb931d;
+}
+
+.contact-img {
+    width: 100px;
+    max-width: 100px;
+    height: 100px;
+    max-height: 100px;
+    margin-bottom: 10px;
+}
+
+.card-contact-us {
+    border-radius: 20px!important;
+    border: 0!important;
+    border-color: #8f8f8f!important;
+    box-shadow: 1px 4px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-about-us {
+    width: 1200px;
+    border-radius: 20px!important;
+    border: 0!important;
+    border-color: #8f8f8f!important;
+    box-shadow: 1px 4px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+/** **/

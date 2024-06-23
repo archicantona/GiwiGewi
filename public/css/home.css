@@ -13,22 +13,20 @@ body {
     padding: 0;
 }
 
-.content1 h1{
+/* .content1 h1{
     padding-top: 20px;
     padding: 20px;
     font-weight: 900;
+    text-align: left;
+} */
+
+.left h1 {
+    font-weight: 900;
+    max-width: 460px;
+    padding: 20px;
     text-align: left;
 }
 
-.left .h1 {
-    font-weight: 900;
-    font-family: 'Lato', sans-serif;
-    max-width: 360px;
-    padding-top: 20px;
-    padding: 20px;
-    font-size: 24px;
-    text-align: left;
-}
 .left p {
     font-family: 'Lato', sans-serif;
     max-width: 360px;
@@ -45,7 +43,7 @@ body {
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 54px;
-    font-size: 1em;
+    font-size: 1.25em;
     transition: background-color 0.3s ease;
 }
 
@@ -245,7 +243,7 @@ body {
 
 .price {
     font-family: 'Lato', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
     font-weight: 700;
     letter-spacing: 0em;
     text-align: left;
@@ -253,7 +251,9 @@ body {
 }
 
 .product-names {
-    max-width: 300px; /* Example: Set a max width for product names */
+    max-width: 300px;
+    font-size: 23px;
+    font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

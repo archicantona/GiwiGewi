@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contoh Fitur Tambah ke Keranjang</title>
   <link rel="stylesheet" href="{{ asset('css/keranjang.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/keranjang.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/keranjang.css') }}">
+  <link rel="icon" type="image/x-icon" href="/img/logo.png">
 </head>
 <body>
   <div class="product">

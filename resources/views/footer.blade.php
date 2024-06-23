@@ -115,7 +115,7 @@
                     <div style="width: 130px;">${item.product.name}</div>
                     <p>Quantity: ${item.quantity}</p>
                     <p>Rp. ${item.product.price * item.quantity}</p>
-                    <a href="/cart/remove" class="remove-item" data-id="${item.id}">Hapus</a>
+                    <a href="/cart/remove" class="remove-item btn" data-id="${item.id}">Hapus</a>
                 </div>
             `;
                     cartTotal += item.product.price * item.quantity;
