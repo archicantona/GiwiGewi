@@ -17,18 +17,16 @@
     @include('navbar')
     
     <div class="container-fluid justify-content-center text-center p-5 my-5">
-        
-        
         <div class="row">
-            <div class="col me-auto">
+            <div class="col-2 me-auto">
                 <div class="mb-3">
                     <a href="/about" class="button-menu-about first-button">Tentang Kami</a>
                     <a href="/contact" class="button-menu-about second-button">Hubungi Kami</a>
                 </div>
             </div>
             
-            <div class="col mx-auto">
-                <div class="card card-about-us p-4">
+            <div class="col-8 mx-auto">
+                <div class="card card-about-us p-4 w-100">
                     <div class="card-body">
                         <h1 class="contact-info-title text-secondary mb-4">TENTANG GIWIGEWI</h1>
                         <div class="row text-start">
@@ -66,13 +64,12 @@
                 </div>
             </div>
             
-            <div class="col ms-auto">
+            <div class="col-2 ms-auto">
             </div>
         </div>  
     </div>
+
     @include('footer')
-    
-    
     
 </body>
 
