@@ -63,6 +63,7 @@ class HalamanController extends Controller
         
         if ($cartItem) {
             $cartItem->delete();
+            Session::flash('withErrors', 'Item removed from cart');
             return response()->json(['success' => 'Item removed from cart.']);
         }
         
@@ -81,6 +82,7 @@ class HalamanController extends Controller
         $cartItems = Cart::where('user_id', $userId)->get();
         
         if ($cartItems->isEmpty()) {
+            Session::flash('withErrors', 'Keranjang kosong!');
             return redirect()->back()->withErrors(['Keranjang kosong!']);
         }
         

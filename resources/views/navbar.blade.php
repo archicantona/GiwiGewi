@@ -109,6 +109,20 @@
         });
     </script>
     @endif
+    @if(Session::has('withErrors'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Toastify({
+                text: "{{ Session::get('withErrors') }}",
+                duration: 7000,  // Duration in milliseconds
+                close: true,
+                gravity: "top", // Showing the toast at the top of the page
+                position: "center", // Positioning the toast in the center
+                backgroundColor: "#dc3545", // Custom background color
+            }).showToast();
+        });
+    </script>
+    @endif
     
 </body>
 
