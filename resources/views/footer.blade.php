@@ -74,7 +74,6 @@
 
 
 <script src="script.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -88,20 +87,7 @@
         // Get the button that opens the popup
         var btn = document.getElementById("cartBtn");
         
-        var btnCheckout = document.getElementById("checkoutBtn");
-
-        var btnAddProduct = document.getElementById("addProductToCart");
-        
         var span = document.getElementsByClassName("close")[0]; 
-
-        btnAddProduct.onclick = function() {
-            // Check if there's a success message from PHP
-            // var successMessage = "{{ session('success') }}";
-            var successMessage = "Produk berhasil ditambahkan ke keranjang!";
-            if (successMessage) {
-                alert(successMessage); // Show an alert with the success message
-            }
-        }
         
         btn.onclick = function() {
             popup.style.display = "block";
@@ -124,15 +110,6 @@
                 $("#cartItems").html(cartItems);
                 $("#cartTotal").html(`<h3>Subtotal: Rp. ${formattedTotal}</h3>`);
             });
-        }
-
-        btnCheckout.onclick = function() {
-            // Check if there's a success message from PHP
-            // var successMessage = "{{ session('success') }}";
-            var successMessage = "Checkout berhasil!";
-            if (successMessage) {
-                alert(successMessage); // Show an alert with the success message
-            }
         }
         
         function number_format(number, decimals, decPoint, thousandsSep) {

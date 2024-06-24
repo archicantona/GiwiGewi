@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class HalamanController extends Controller
 {
@@ -21,7 +22,7 @@ class HalamanController extends Controller
         $products = Product::all();
         return view('user.produk', compact('products'));
     }
-
+    
     public function detailproduk($id)
     {
         $product = Product::findOrFail($id);
@@ -33,12 +34,12 @@ class HalamanController extends Controller
             'product_id' => 'required|exists:products,id',
             'quantity' => 'required|integer|min:1'
         ]);
-
+        
         // Check if the product is already in the cart
         $existingCart = Cart::where('user_id', Auth::id())
-            ->where('product_id', $request->input('product_id'))
-            ->first();
-
+        ->where('product_id', $request->input('product_id'))
+        ->first();
+        
         if ($existingCart) {
             // If the product is already in the cart, just update the quantity
             $existingCart->quantity += $request->input('quantity');
@@ -51,38 +52,38 @@ class HalamanController extends Controller
             $cart->quantity = $request->input('quantity');
             $cart->save();
         }
-
+        
         return redirect()->back()->with('success', 'Produk berhasil ditambahkan ke keranjang!');
     }
     public function removeFromCart(Request $request)
     {
         $cartId = $request->input('cart_id');
-
+        
         $cartItem = Cart::where('id', $cartId)->where('user_id', Auth::id())->first();
-
+        
         if ($cartItem) {
             $cartItem->delete();
             return response()->json(['success' => 'Item removed from cart.']);
         }
-
+        
         return response()->json(['error' => 'Item not found in cart.'], 404);
     }
-
+    
     public function getCart()
     {
         $cartItems = Cart::where('user_id', Auth::id())->with('product')->get();
         return response()->json($cartItems);
     }
-
+    
     public function checkout(Request $request)
     {
         $userId = Auth::id();
         $cartItems = Cart::where('user_id', $userId)->get();
-
+        
         if ($cartItems->isEmpty()) {
             return redirect()->back()->withErrors(['Keranjang kosong!']);
         }
-
+        
         foreach ($cartItems as $item) {
             Order::create([
                 'user_id' => $userId,
@@ -92,18 +93,21 @@ class HalamanController extends Controller
                 'status' => 'selesai',
             ]);
         }
-
+        
         // Hapus semua item di keranjang setelah checkout
         Cart::where('user_id', $userId)->delete();
-
-        return redirect()->route('produk')->with('success', 'Checkout berhasil!');
+        
+        // Flash success message to session
+        Session::flash('success', 'Checkout berhasil!');
+        
+        return redirect()->route('produk');
     }
-
+    
     public function search(Request $request)
     {
         $query = $request->input('query');
         $products = Product::where('name', 'LIKE', "%{$query}%")->get();
-
+        
         return view('user.produk', compact('products'));
     }
 }

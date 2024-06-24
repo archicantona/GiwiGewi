@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
     <title>Navbar</title>
 </head>
@@ -94,5 +95,23 @@
         </div>
     </nav>
     
+    @if(Session::has('success'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Toastify({
+                text: "{{ Session::get('success') }}",
+                duration: 7000,  // Duration in milliseconds
+                close: true,
+                gravity: "top", // Showing the toast at the top of the page
+                position: "center", // Positioning the toast in the center
+                backgroundColor: "#4CAF50", // Custom background color
+            }).showToast();
+        });
+    </script>
+    @endif
+    
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </html>
