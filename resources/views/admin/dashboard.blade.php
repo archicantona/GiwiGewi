@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -73,6 +73,10 @@
         margin-bottom: 20px;
     }
 
+    h2 { 
+        font-weight:bold;
+    }
+
     .btn-tambah-produk {
         padding: 8px 12px;
         border-radius: 4px;
@@ -81,16 +85,22 @@
         text-decoration: none;
         display: inline-block;
     }
-
+    .number-column {
+            counter-reset: rowNumber;
+        }
+        .number-column td:first-child::before {
+            counter-increment: rowNumber;
+            content: counter(rowNumber);
+        }
     td {
         border-radius:
             9px, 9px, 0px, 0px;
         max-width: 200px;
     }
 
-
-
     .btn-tambah-produk:hover {
+        color: white;
+        text-decoration: none;
         background-color: darkorange;
     }
 
@@ -158,7 +168,7 @@
             <a href="/admin" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
             <a href="/tambahartikel"><i class="fas fa-plus"></i> Tambah Artikel</a>
-            <a href="/messages"><i class="fas fa-inbox"></i>Pesan</a>
+            <a href="/messages"><i class="fas fa-inbox"></i>Pesan&Kesan</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -167,13 +177,13 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Daftar Produk</h2>
+            <h2>Dashboard</h2>
             <a href="/products/create" class="btn-tambah-produk">+ Tambah Produk</a>
         </div>
-        <table>
+        <table class="number-column">
             <thead>
                 <tr>
-                    <th>id</th>
+                    <th>No</th>
                     <th>Gambar</th>
                     <th>Nama Produk</th>
                     <th>Deskripsi Produk</th>
@@ -184,7 +194,7 @@
             </thead>
             @foreach ($products as $product)
             <tbody>
-                <td>{{ $product->id }}</td>
+                <td></td>
                 <td>
                     <img src="img/upload/{{$product-> picture}}" width="100">
                 </td>

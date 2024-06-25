@@ -22,7 +22,7 @@ body {
 
 .left h1 {
     font-weight: 900;
-    max-width: 460px;
+    max-width: 1000px;
     padding: 20px;
     text-align: left;
 }
@@ -515,7 +515,7 @@ h2 {
 .product-image  {
     justify-content: center;
     max-width: 85%;
-    height: 85%;
+    height: 80%;
 }
 
 .product-detail-name {

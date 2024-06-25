@@ -66,7 +66,7 @@
         }
         
         .btn-login:hover {
-            color: grey;
+            color: white;
             background-color: orange;
         }
         

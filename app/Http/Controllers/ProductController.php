@@ -62,14 +62,14 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'description' => 'nullable|string',
             'price' => 'required|numeric',
             'stock_quantity' => 'required|integer',
             'storage_period' => 'nullable|string',
             'no_BPOM' => 'nullable|string',
             'category' => 'nullable|string',
-            'weight' => 'nullable|numeric',
+            'weight' => 'nullable|string',
         ]);
 
         $product = Product::findOrFail($id);

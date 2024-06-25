@@ -29,4 +29,15 @@ class MessageController extends Controller
 
         return redirect()->back()->with('success', 'Pesan berhasil dikirim!');
     }
+    public function destroy($id)
+    {
+        $message = Message::find($id);
+
+        if ($message) {
+            $message->delete();
+            return redirect('/messages')->with('message', 'Message deleted successfully');
+        }
+
+        return view('admin.messages');
+    }
 }

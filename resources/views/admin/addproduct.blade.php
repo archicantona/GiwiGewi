@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Produk</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -71,6 +71,10 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 20px;
+    }
+
+    h2{
+        font-weight:bold;
     }
 
     .form-container {
@@ -145,7 +149,7 @@
             <a href="/admin" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
             <a href="/tambahartikel"><i class="fas fa-plus"></i> Tambah Artikel</a>
-            <a href="/messages"><i class="fas fa-inbox"></i>Pesan</a>
+            <a href="/messages"><i class="fas fa-inbox"></i>Pesan&Kesan</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -154,7 +158,7 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Informasi Produk</h2>
+            <h2>Tambah Produk</h2>
         </div>
         <div class="form-container">
 
@@ -200,8 +204,8 @@
                         <input type="text" id="category" name="category" required>
                     </div>
                     <div style="flex: 1;">
-                        <label for="weight">Berat (Gram)</label>
-                        <input type="number" id="weight" name="weight" required>
+                        <label for="weight">Berat Produk</label>
+                        <input type="text" id="weight" name="weight" required>
                     </div>
                 </div>
 

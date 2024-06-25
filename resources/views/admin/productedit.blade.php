@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Produk</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -73,6 +73,10 @@
         margin-bottom: 20px;
     }
 
+    h2{
+        font-weight:bold;
+    }
+
     .form-container {
         background-color: #fff;
         padding: 40px;
@@ -136,6 +140,15 @@
     .form-actions .btn-save:hover {
         background-color: darkorange;
     }
+
+    .btn-primary {
+        background-color:darkorange;
+        border:none;
+    }
+
+    .btn-primary:hover{
+        background-color: #F0B572;
+    }
 </style>
 
 <body>
@@ -145,7 +158,7 @@
             <a href="/admin" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
             <a href="/userorder"><i class="fas fa-chart-line"></i> User Order</a>
             <a href="/tambahartikel"><i class="fas fa-plus"></i> Tambah Artikel</a>
-            <a href="/messages"><i class="fas fa-inbox"></i>Pesan</a>
+            <a href="/messages"><i class="fas fa-inbox"></i>Pesan&Kesan</a>
         </div>
         <div class="logout">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
@@ -154,37 +167,37 @@
 
     <div class="content">
         <div class="judulhalaman">
-            <h2>Edit Produkk</h2>
+            <h2>Edit Produk</h2>
         </div>
         <div class="form-container">
 
         <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label for="name">Product Name</label>
+                <label for="name">Nama Produk</label>
                 <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
             </div>
             <div class="form-group">
-                <label for="picture">Picture</label>
+                <label for="picture">Gambar Produk</label>
                 <input type="file" class="form-control" id="picture" name="picture">
                 @if($product->picture)
                 <img src="{{ asset('img/upload/' . $product->picture) }}" alt="Product Image" height="100">
                 @endif
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Deskripsi Produk</label>
                 <textarea class="form-control" id="description" name="description">{{ $product->description }}</textarea>
             </div>
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">Harga Produk</label>
                 <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
             </div>
             <div class="form-group">
-                <label for="stock_quantity">Stock Quantity</label>
+                <label for="stock_quantity">Stok</label>
                 <input type="number" class="form-control" id="stock_quantity" name="stock_quantity" value="{{ $product->stock_quantity }}" required>
             </div>
             <div class="form-group">
-                <label for="storage_period">Storage Period</label>
+                <label for="storage_period">Durasi Penyimpanan</label>
                 <input type="text" class="form-control" id="storage_period" name="storage_period" value="{{ $product->storage_period }}">
             </div>
             <div class="form-group">
@@ -192,11 +205,11 @@
                 <input type="text" class="form-control" id="no_BPOM" name="no_BPOM" value="{{ $product->no_BPOM }}">
             </div>
             <div class="form-group">
-                <label for="category">Category</label>
+                <label for="category">Kategori</label>
                 <input type="text" class="form-control" id="category" name="category" value="{{ $product->category }}">
             </div>
             <div class="form-group">
-                <label for="weight">Weight</label>
+                <label for="weight">Berat Produk</label>
                 <input type="text" class="form-control" id="weight" name="weight" value="{{ $product->weight }}">
             </div>
             <button type="submit" class="btn btn-primary">Update</button>

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('storage_period');
             $table->string('no_BPOM');
             $table->string('category');
-            $table->integer('weight');
+            $table->string('weight');
             $table->timestamps();
         });
     }

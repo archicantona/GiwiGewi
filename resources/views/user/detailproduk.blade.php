@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Produk Detail</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
                     <p style="margin-bottom: 1px;"><strong>Kategori:</strong> {{ $product->category }}</p>
                     <p style="margin-bottom: 1px;"><strong>Masa Penyimpanan:</strong> {{ $product->storage_period }} Bulan</p>
                     <p style="margin-bottom: 1px;"><strong>Stok:</strong> {{ $product->stock_quantity }}</p>
-                    <p style="margin-bottom: 1px;"><strong>Berat Produk:</strong> {{ $product->weight }} ML</p>
+                    <p style="margin-bottom: 1px;"><strong>Berat Produk:</strong> {{ $product->weight }}</p>
                     <p style="margin-bottom: 1px;"><strong>Nomor BPOM:</strong> {{ $product->no_BPOM }}</p>
                     <h3 class="mt-5">Deskripsi Produk</h3>
                     <div class="deskripsi">{{ $product->description }}</div>

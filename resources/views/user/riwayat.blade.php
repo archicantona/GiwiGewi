@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Riwayat Transaksi</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
@@ -42,7 +42,7 @@
         }
 
         .first-button {
-            background-color: #fb931d;
+            background-color: darkorange;
             position: relative;
             z-index: 2;
         }
@@ -56,7 +56,7 @@
         }
 
         .first-button:hover {
-            background-color: #e07b00;
+            background-color: orange;
             /* Darker shade for hover */
         }
 
@@ -65,6 +65,17 @@
             /* Slightly darker shade for hover */
         }
 
+        .button-menu-riwayat {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            border: solid 1px;
+            border-color: #fb931d;
+        }
 
 
 
@@ -124,8 +135,8 @@
         }
 
         .transaction-item .btn:hover {
-            color:#FB931E;
-            background-color: #FFDD55;
+            color:white;
+            background-color: #FBB464;
         }
 
         .transaction-container h2 {
@@ -139,8 +150,8 @@
     @include('navbar')
     <div class="main-container">
         <div class="button-container">
-            <a href="/userinfo" class="button second-button">Informasi Akun</a>
-            <a href="/riwayattransaksi" class="button first-button" style="color: white;">Riwayat Transaksi</a>
+            <a href="/userinfo" class="button-menu-riwayat second-button">Informasi Akun</a>
+            <a href="/riwayattransaksi" class="button-menu-riwayat first-button" style="color: white;">Riwayat Transaksi</a>
         </div>
         <div class="transaction-container">
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -23,7 +23,7 @@
             <div class="col me-auto">
                 <div class="mb-3">
                     <a href="/about" class="button-menu-about first-button">Tentang Kami</a>
-                    <a href="/contact" class="button-menu-about second-button">Hubungi Kami</a>
+                    <a href="/contact" class="button-menu-about second-button">Kontak Informasi</a>
                 </div>
             </div>
             
@@ -34,7 +34,7 @@
                         <div class="row text-start">
                             <div class="my-4 col-12 mx-2">
                                 <p>Home Industri Giwigewi ini mulai mengolah buah jeruk kalamansi untuk dijadikan sirup yang berbentuk Squash mulai dari tahun 2012.<br>
-                                    Keunggulan produk ini selain mempunyai citarasa harum dan khas sekaligus sirup kalamansi ini juga sangat bermanfaat bagi<br>
+                                    Keunggulan produk ini selain mempunyai citarasa harum dan khas sekaligus sirup kalamansi ini juga sangat bermanfaat bagi
                                     kesehatan tubuh bila dikonsumsi secara teratur karena kaya Vitamin C.
                                 </p>
                             </div>

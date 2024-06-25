@@ -87,6 +87,7 @@
         
         // Get the button that opens the popup
         var btn = document.getElementById("cartBtn");
+        console.log(btn)
         
         var btnCheckout = document.getElementById("checkoutBtn");
 
@@ -94,12 +95,14 @@
         
         var span = document.getElementsByClassName("close")[0]; 
 
-        btnAddProduct.onclick = function() {
-            // Check if there's a success message from PHP
-            // var successMessage = "{{ session('success') }}";
-            var successMessage = "Produk berhasil ditambahkan ke keranjang!";
-            if (successMessage) {
-                alert(successMessage); // Show an alert with the success message
+        if (btnAddProduct) {
+            btnAddProduct.onclick = function() {
+                // Check if there's a success message from PHP
+                // var successMessage = "{{ session('success') }}";
+                var successMessage = "Produk berhasil ditambahkan ke keranjang!";
+                if (successMessage) {
+                    alert(successMessage); // Show an alert with the success message
+                }
             }
         }
         

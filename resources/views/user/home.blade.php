@@ -21,7 +21,7 @@
     <div class="content1">
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 0 0 4rem;">
             <div class="left" style="width: 30%;">
-                <h1>Jangan tinggalkan Kota Bengkulu Tanpa</h1>
+                <h1>Jangan Tinggalkan Kota Bengkulu Tanpa</h1>
                 <img src="http://127.0.0.1:8000/img/logo_nama.png" style="max-height: 60px;">
                 <p>Pusat Oleh-oleh dan camilan khas Bengkulu</p>
                 <a href="/produk" class="shop-now mx-3">Shop Now</a>
@@ -50,7 +50,7 @@
             <div class="pilihan_produk">
                 PRODUK PILIHAN
             </div>
-            <hr style="  border-top: 1px solid rgb(90, 90, 90);"></hr>
+        
         </div>
     </div>
     

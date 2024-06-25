@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/articles', [ArticleController::class, 'store'])->name('articles.store')->middleware(('userAccess:admin'));
     Route::get('/articles', [ArticleController::class, 'addarticle'])->name('articles.addarticles')->middleware(('userAccess:admin'));
     Route::get('/messages', [MessageController::class, 'messages'])->name('messages')->middleware(('userAccess:admin'));
+    Route::delete('/message/{id}', [MessageController::class, 'destroy'])->middleware(('userAccess:admin'));
     Route::post('/cart/add', [HalamanController::class, 'addToCart'])->name('cart.add');
     Route::post('/cart/update-quantity', [HalamanController::class, 'updateCartQuantity'])->name('cart.updateQuantity');
     Route::get('/cart', [HalamanController::class, 'getCart'])->name('cart.get');

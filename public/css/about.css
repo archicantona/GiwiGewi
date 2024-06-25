@@ -13,7 +13,7 @@
 
 .card p {
     margin: 0;
-    font-size: 20px;
+    font-size: 14px;
     color: #555;
     margin-bottom: 10px;
 }
@@ -71,23 +71,22 @@ strong {
 .contact-img {
     width: 100px;
     max-width: 100px;
-    height: 100px;
     max-height: 100px;
     margin-bottom: 10px;
 }
 
 .card-contact-us {
-    border-radius: 20px!important;
-    border: 0!important;
-    border-color: #8f8f8f!important;
+    border-radius: 20px !important;
+    border: 0 !important;
+    border-color: #8f8f8f !important;
     box-shadow: 1px 4px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-about-us {
-    width: 1200px;
-    border-radius: 20px!important;
-    border: 0!important;
-    border-color: #8f8f8f!important;
+    width: 1000px;
+    border-radius: 20px !important;
+    border: 0 !important;
+    border-color: #8f8f8f !important;
     box-shadow: 1px 4px 6px 8px rgba(0, 0, 0, 0.1);
 }
 

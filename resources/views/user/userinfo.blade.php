@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Informasi User</title>
+    <title>Giwigewi</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
@@ -26,6 +26,19 @@
         .button-container {
             position: relative;
             display: inline-block;
+        }
+
+        .button-menu-user {
+            display: block;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: solid 1px;
+    border-color: #fb931d;
         }
 
         .button {
@@ -64,9 +77,6 @@
             background-color: #d6e9ff;
             /* Slightly darker shade for hover */
         }
-
-
-
 
         .transaction-container {
             display: flex;
@@ -140,8 +150,8 @@
     @include('navbar')
     <div class="main-container">
         <div class="button-container">
-            <a href="/userinfo" class="button first-button">Informasi Akun</a>
-            <a href="/riwayattransaksi" class="button second-button" style="color: black;">Riwayat Transaksi</a>
+            <a href="/userinfo" class="button-menu-user first-button">Informasi Akun</a>
+            <a href="/riwayattransaksi" class="button-menu-user second-button">Riwayat Transaksi</a>
         </div>
         <div class="transaction-container">
 
